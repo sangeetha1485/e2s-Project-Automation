@@ -26,7 +26,7 @@ Safari	safaridriver
     
     https://www.selenium.dev/downloads/
     
-    For url to download Eclispe version used for automation,please refer:
+    For url to download Eclipse version used for automation,please refer:
     
     https://www.eclipse.org/downloads/packages/release/oxygen/3a/eclipse-ide-java-developers
     
