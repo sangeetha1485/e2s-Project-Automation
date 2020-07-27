@@ -19,7 +19,16 @@ Safari	safaridriver
     If Error : check installed **chrome** version by visiting this [link](chrome://version) 
     and download appropriate driver from this [link]([chrome://version](https://chromedriver.chromium.org/downloads))
     
-    you will need to install the JDK and download the latest server from Selenium
+    you will need to install the JDK using https://www.oracle.com/java/technologies/javase-downloads.html 
+    
+    
+    For documentation and downloads related to Selenium please refer the below link:
+    
+    https://www.selenium.dev/downloads/
+    
+    For url to download Eclispe version used for automation,please refer:
+    
+    https://www.eclipse.org/downloads/packages/release/oxygen/3a/eclipse-ide-java-developers
     
     
     
