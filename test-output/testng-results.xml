@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="72459" started-at="2020-07-27T11:58:04Z" finished-at="2020-07-27T11:59:16Z">
+  <suite name="Suite" duration-ms="90031" started-at="2020-07-29T14:56:59Z" finished-at="2020-07-29T14:58:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="72459" started-at="2020-07-27T11:58:04Z" finished-at="2020-07-27T11:59:16Z">
+    <test name="Test" duration-ms="90031" started-at="2020-07-29T14:56:59Z" finished-at="2020-07-29T14:58:29Z">
       <class name="Test.AudienceTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Test.AudienceTest@1b68b9a4]" name="setUp" is-config="true" duration-ms="19058" started-at="2020-07-27T11:58:04Z" finished-at="2020-07-27T11:58:23Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Test.AudienceTest@4206a205]" name="setUp" is-config="true" duration-ms="19814" started-at="2020-07-29T14:56:59Z" finished-at="2020-07-29T14:57:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="executePollsTestCases()[pri:0, instance:Test.AudienceTest@1b68b9a4]" name="executePollsTestCases" duration-ms="52167" started-at="2020-07-27T11:58:23Z" finished-at="2020-07-27T11:59:15Z">
+        <test-method status="PASS" signature="validateTC_AP_029()[pri:0, instance:Test.AudienceTest@4206a205]" name="validateTC_AP_029" duration-ms="69152" started-at="2020-07-29T14:57:19Z" finished-at="2020-07-29T14:58:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- executePollsTestCases -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:Test.AudienceTest@1b68b9a4]" name="tearDown" is-config="true" duration-ms="1189" started-at="2020-07-27T11:59:15Z" finished-at="2020-07-27T11:59:16Z">
+        </test-method> <!-- validateTC_AP_029 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Test.AudienceTest@4206a205]" name="tearDown" is-config="true" duration-ms="1004" started-at="2020-07-29T14:58:28Z" finished-at="2020-07-29T14:58:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- Test.AudienceTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
