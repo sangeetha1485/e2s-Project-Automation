@@ -30,83 +30,58 @@ WebDriver driver;
 	private static WebElement element =null;
 	
 	
+	
+	
 	//reusable methods and xpath for Audience-Persona
-	public static WebElement clickcreatenewbutton(WebDriver driver) throws InterruptedException 
-	{
-		Thread.sleep(4000);
-		element=driver.findElement(By.xpath("//button[contains(text(),'Create New')]"));
-		return element;
-	}
+//	public static WebElement clickcreatenewbutton(WebDriver driver) throws InterruptedException 
+//	{
+//		Thread.sleep(4000);
+//		element=driver.findElement(By.xpath("//button[contains(text(),'Create New')]"));
+//		return element;
+//	}
 	
-	public static WebElement enterPersonaName(WebDriver driver) throws InterruptedException 
-	{
-		
-		element=driver.findElement(By.name("personaname"));
-		return element;
-	}
-	
-	
-	public static WebElement enterDescription(WebDriver driver) throws InterruptedException 
+	public class audiencepagelocators extends AudiencePage
 	{
 		
-		element=driver.findElement(By.xpath("//textarea[@name='description']"));
-		return element;
+		public static final String createnewbutton="//button[contains(text(),'Create New')]";
+		public static final String personaname="personaname";
+		public static final String enterDescription="//textarea[@name='description']";
+		public static final String selectAttribute="//span[contains(text(),'Select or search attribute')]";
+		
+		public static final String selectOperator="//span[contains(text(),'Select or search operator')]";
+		public static final String selectValue="//label[contains(text(),'Value*')]//following::input";
+		
+		public static final String clickAddButton ="//a[@class='audience-create-add-btn ng-scope']";
+		public static final String clickApplyButton="//span[contains(text(),'Apply')]";
+		
+		public static final String createpersonaButton="//button[contains(text(),'Cancel')]//following::button";
+		public static final String selectSeatNumber="//div[contains(text(),'seat number')]";
+		
+		public static final String selectGreaterThanOrEqual="//div[contains(text(),'Greater than Or Equal')]";
+		
+		public static final String selectUserType="//*[@id='selected_user_']";
+		public static final String selectStaffUserType="//div[contains(text(),'Staff')]";
+		
+		public static final String selectInternalOption="//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[5]/div/div";
+		public static final String alertMessageemptyValue="alertMessageemptyValue";
+		
 	}
 	
-	public static WebElement selectAttribute(WebDriver driver) throws InterruptedException 
-	{
-		Thread.sleep(4000);
-		element=driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]"));
-		return element;
-	}
 	
 	
-	public static WebElement selectOperator(WebDriver driver) throws InterruptedException 
-	{
-		Thread.sleep(4000);
-		element=driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]"));
-		return element;
-	}
 	
-	public static WebElement selectValue(WebDriver driver) throws InterruptedException 
+	
+	
+	
+	
+
+	
+	
+	
+	public static WebElement alertMessageemptyValue(WebDriver driver) throws InterruptedException 
 	{
 		
-		element=driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input"));
-		return element;
-	}
-	
-	public static WebElement clickAddButton(WebDriver driver) throws InterruptedException 
-	{
-		
-		element=driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']"));
-		return element;
-	}
-	
-	public static WebElement clickApplyButton(WebDriver driver) throws InterruptedException 
-	{
-		Thread.sleep(4000);
-		element=driver.findElement(By.xpath("//span[contains(text(),'Apply')]"));
-		return element;
-	}
-	
-	public static WebElement createpersonaButton(WebDriver driver) throws InterruptedException 
-	{
-		Thread.sleep(4000);
-		element=driver.findElement(By.xpath("//button[contains(text(),'Cancel')]//following::button"));
-		return element;
-	}
-	
-	public static WebElement selectSeatNumber(WebDriver driver) throws InterruptedException 
-	{
-		
-		element=driver.findElement(By.xpath("//div[contains(text(),'seat number')]"));
-		return element;
-	}
-	
-	public static WebElement selectGreaterThanOrEqual(WebDriver driver) throws InterruptedException 
-	{
-		
-		element=driver.findElement(By.xpath("//div[contains(text(),'Greater than Or Equal')]"));
+		element=driver.findElement(By.xpath("//div[contains(text(),'Please select value')]"));
 		return element;
 	}
 	

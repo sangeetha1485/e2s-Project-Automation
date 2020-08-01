@@ -12,7 +12,24 @@ import Test.FunctionalTest;
 
 public class GenericMEthods extends FunctionalTest{
 	
+	//initializing locators
 	
+	
+//	public enum LocatorType {
+//		
+//		Xpath, Name
+//		
+//		}
+//	
+//	public static class CharacterDirection {
+//		LocatorType locatortype;
+//
+//	    public CharacterDirection(LocatorType locatortype) {
+//	        this.locatortype = locatortype;
+//	    }
+	    
+	   
+
 	public void navigateToHomePage() throws InterruptedException
 	{
 	
@@ -96,17 +113,17 @@ public class GenericMEthods extends FunctionalTest{
 
 	}
 	
-	public WebElement scrollDown( WebElement element1) throws InterruptedException
+	public void scrollDown( String locator) throws InterruptedException
 	{
 	 JavascriptExecutor js = (JavascriptExecutor) driver;
 		//Find element by link text and store in variable "Element"        		
-	 element1 = driver.findElement(By.xpath("//div[2]/button[2]/span[1]"));
+	 WebElement createpersonabutton =driver.findElement(By.xpath(locator));
 
      //This will scroll the page till the element is found		
-     js.executeScript("arguments[0].scrollIntoView();", element1);
+     js.executeScript("arguments[0].scrollIntoView();", createpersonabutton);
      
      Thread.sleep(3000);
-	return element1;
+	
 	}
 	
 	
@@ -129,6 +146,49 @@ public class GenericMEthods extends FunctionalTest{
 		
 	}
 	
+	
+	public void click(String locatortype,String locator)
+	{
+		
+		switch(locatortype)
+		{
+		
+		case "Xpath":
+		
+			driver.findElement(By.xpath(locator)).click();
+		
+		break;
+		
+		case "Name":
+		
+			driver.findElement(By.name(locator)).click();
+		
+		break;
+			
+		}
+		
+	}
+	
+	public void SendKeys(String locatortype,String locator,String value)
+	{
+		switch(locatortype)
+		{
+		case "Xpath":
+			
+			driver.findElement(By.xpath(locator)).sendKeys(value);
+		
+			break;
+	
+		
+		case "Name":
+			
+			driver.findElement(By.name(locator)).sendKeys(value);
+			break;
+		}
+		
+	}
+	
+	
 	public static void assertEquals(Object actualResult, Object expectedResult)
     {
         if (!expectedResult.equals(actualResult))
@@ -137,4 +197,8 @@ public class GenericMEthods extends FunctionalTest{
             
         }
     }
+
+
+
+	
 }

@@ -5,9 +5,11 @@
     <classes>
       <class name="Test.AudienceTest">
         <methods>
+          <include name="validateTC_AP_029"/>
+          <include name="setExtent"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="validatetc29"/>
+          <include name="endReport"/>
         </methods>
       </class> <!-- Test.AudienceTest -->
     </classes>

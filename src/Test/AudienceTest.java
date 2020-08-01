@@ -3,13 +3,27 @@ package Test;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
 import utility.GenericMEthods;
 import Pages.AudiencePage;
 
+import Pages.AudiencePage.audiencepagelocators;
+import utility.ExtentDemo;
 
 public class AudienceTest extends FunctionalTest{
 	
+
+	private static final String Xpath = "";
+	private static final String Name = "";
+	
 	AudiencePage ap = new AudiencePage();
+	//public ExtentReports extent;
+	
+	
+	
 	
 	GenericMEthods gm = new GenericMEthods();
 	public void executePollsTestCases() throws InterruptedException
@@ -60,40 +74,56 @@ public class AudienceTest extends FunctionalTest{
 	@Test	
 	public void validateTC_AP_029() throws InterruptedException
 	{
+		
+		extentTest = extent.startTest("validateTC_AP_029");
 		gm.navigateToAudiencePage();
+		Thread.sleep(5000);
+		gm.click("Xpath",audiencepagelocators.createnewbutton);
+		Thread.sleep(10000);
 		
 		
-		ap.clickcreatenewbutton(driver).click();
-		ap.enterPersonaName(driver).sendKeys("testpersona5");
 		
-		ap.enterDescription(driver).sendKeys("test");
 		
-		ap.selectAttribute(driver).click();
+		gm.SendKeys("Name", audiencepagelocators.personaname, "10");		
+	
+		gm.SendKeys("Xpath", audiencepagelocators.enterDescription, "test");
+			
+		
+		gm.click("Xpath", audiencepagelocators.selectAttribute);
 		
 	    Thread.sleep(3000);
 		
 		//write code for seat number
-		ap.selectSeatNumber(driver).click();
 		
-		ap.selectOperator(driver).click();
+		gm.click("Xpath", audiencepagelocators.selectSeatNumber);
+		
+		
+		gm.click("Xpath", audiencepagelocators.selectOperator);
+		
 		
 		//write code for operator
-		ap.selectGreaterThanOrEqual(driver).click();
 		
-		ap.selectValue(driver).sendKeys("5");
 		
-		ap.clickAddButton(driver).click();
+		gm.click("Xpath", audiencepagelocators.selectGreaterThanOrEqual);
+		
+		
+		gm.SendKeys("Xpath", audiencepagelocators.selectValue, "5");
+		
+		
+		
+		gm.click("Xpath", audiencepagelocators.clickAddButton);
 		
 		Thread.sleep(3000);
 		
-		ap.clickApplyButton(driver).click();
 		
-		ap.checkingUserCounts();
-		
-		gm.scrollDown(ap.createpersonaButton(driver));
+		gm.click("Xpath", audiencepagelocators.clickApplyButton);
+		//ap.checkingUserCounts();
 		
 		
-		ap.createpersonaButton(driver).click();
+		gm.scrollDown(audiencepagelocators.createpersonaButton);
+		
+		
+		gm.click("Xpath", audiencepagelocators.createpersonaButton);
 		
 		Thread.sleep(5000);
 		Assert.assertTrue(driver.getPageSource().contains("testpersona4"),"persona created successfully");
