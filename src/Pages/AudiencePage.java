@@ -42,7 +42,7 @@ WebDriver driver;
 	
 	public class audiencepagelocators extends AudiencePage
 	{
-		
+		//create persona
 		public static final String createnewbutton="//button[contains(text(),'Create New')]";
 		public static final String personaname="personaname";
 		public static final String enterDescription="//textarea[@name='description']";
@@ -64,6 +64,30 @@ WebDriver driver;
 		
 		public static final String selectInternalOption="//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[5]/div/div";
 		public static final String alertMessageemptyValue="alertMessageemptyValue";
+		
+		//import functionality
+		public static final String clickIndividualsTab="//button[contains(text(),'Individuals')]";
+		public static final String clickImportButton="//button[@class='btn btn-white btn-sm ng-scope'][1]";
+		public static final String clickUploadCSV="//button[@class='btn btn-sm btn-primary ng-binding'][1]";
+		public static final String clickdownload ="download";
+		
+		//custom attribute
+		public static final String clickCustomAttributeBuuton="//button[@class='btn btn-white btn-sm ng-scope'][2]";
+		
+		public static final String selectGroupDDL="//span[contains(text(),'Select or search group name')]";
+		public static final String selectGroupName="//div[contains(text(),'Academics group')]";
+		
+		public static final String enterFieldName="//input[@name='name' and @type='text']";
+		public static final String enterFieldType="//span[contains(text(),'Select field type')]";
+		public static final String enterFieldDesc="//label[contains(text(),' Field Description* ')]//following::textarea";
+		public static final String enterValidateAs="//span[contains(text(),'Select or search validate as')]";
+		public static final String selectValidateAsText="//div[contains(text(),'Text')]";
+		
+		public static final String enterCharacterLimit="//input[@placeholder='Character limit']";
+		public static final String clickAddAttributeButton="//button[contains(text(),'Add')]";
+		public static final String attributeTable="//table[@class='table table-striped margin-bottom-0']";
+		public static final String clickCreateAndContinue="//span[contains(text(),'Create and Continue')]";
+		public static final String attributeCreatedSuccessMsg="//div[contains(text(),'Attribute(s) created successfully')]";
 		
 	}
 	

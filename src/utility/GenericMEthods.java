@@ -1,5 +1,9 @@
 package utility;
 
+import java.io.File;
+import java.util.Arrays;
+import java.util.Comparator;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -141,7 +145,7 @@ public class GenericMEthods extends FunctionalTest{
 	public static void Wait(String locator)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[contains(text(),'Select Image')]")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
 		
 		
 	}
@@ -165,8 +169,14 @@ public class GenericMEthods extends FunctionalTest{
 		
 		break;
 			
-		}
 		
+		
+		case "LinkText":
+		
+		driver.findElement(By.linkText(locator)).click();
+		break;
+		
+		}
 	}
 	
 	public void SendKeys(String locatortype,String locator,String value)
@@ -188,7 +198,68 @@ public class GenericMEthods extends FunctionalTest{
 		
 	}
 	
+	public static Boolean isFileDownloaded(String fileName) {
+        boolean flag = false;
+        //paste your directory path below
+        //eg: C:\\Users\\username\\Downloads
+        String dirPath = ""; 
+        File dir = new File(dirPath);
+        File[] files = dir.listFiles();
+        if (files.length == 0 || files == null) {
+            System.out.println("The directory is empty");
+            flag = false;
+        } else {
+            for (File listFile : files) {
+                if (listFile.getName().contains(fileName)) {
+                    System.out.println(fileName + " is present");
+                    break;
+                }
+                flag = true;
+            }
+        }
+        return flag;
+    }
 	
+	
+	public File getLastModifiedFile(File directory) {
+	    File[] files = directory.listFiles();
+	   if (files.length == 0) return null;
+	    Arrays.sort(files, new Comparator<File>() {
+	        public int compare(File o1, File o2) {
+	            return new Long(o2.lastModified()).compareTo(o1.lastModified()); 
+	        }});
+	    return files[0];
+	}
+	
+	 public boolean deleteFile(File pFile) {
+	        boolean bResult = false;
+
+	        if(pFile.exists()) {
+	            if(pFile.isDirectory()) {
+	                if(pFile.list().length == 0) {
+	                    pFile.delete();
+	                } else {
+	                    String[] strFiles = pFile.list();
+
+	                    for(String strFilename: strFiles) {
+	                    	
+	                    	if(strFilename.contains((CharSequence) pFile))
+	                    	{
+	                        File fileToDelete = new File(pFile, strFilename);
+
+	                        deleteFile(fileToDelete);
+	                    	}
+	                    }
+	                }
+	            } else {
+	                pFile.delete();
+	            }
+	        }
+
+	        return bResult;
+	    }
+	 
+	 
 	public static void assertEquals(Object actualResult, Object expectedResult)
     {
         if (!expectedResult.equals(actualResult))

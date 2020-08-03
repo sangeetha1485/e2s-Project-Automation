@@ -81,3 +81,4 @@
 [0731/140401.817:ERROR:file_io_win.cc(179)] CreateFile C:\Users\HP\AppData\Local\Temp\scoped_dir10380_17749\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
 [0731/141012.073:ERROR:file_io_win.cc(179)] CreateFile C:\Users\HP\AppData\Local\Temp\scoped_dir8916_19300\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
 [0731/142014.957:ERROR:file_io_win.cc(179)] CreateFile C:\Users\HP\AppData\Local\Temp\scoped_dir30568_27009\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
+[0803/142630.530:ERROR:file_io_win.cc(179)] CreateFile C:\Users\HP\AppData\Local\Temp\scoped_dir31016_26529\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
