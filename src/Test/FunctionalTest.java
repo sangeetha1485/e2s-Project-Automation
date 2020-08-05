@@ -86,7 +86,7 @@ public class FunctionalTest {
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		// after execution, you could see a folder "FailedTestsScreenshots"
 		// under src folder
-		String destination = System.getProperty("user.home") + "/Documents/Engage2Serve Project Documents/FailedTestsScreenshots" + screenshotName + dateName
+		String destination = System.getProperty("user.home") + "/Documents/Engage2Serve Project Documents/FailedTestsScreenshots/" + screenshotName + dateName
 				+ ".png";
 		File finalDestination = new File(destination);
 		//.copyFile(source, finalDestination);

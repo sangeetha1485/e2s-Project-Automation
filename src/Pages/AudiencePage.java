@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import Pages.AudiencePage.audiencepagelocators;
 import Test.FunctionalTest;
 import utility.GenericMEthods;
 
@@ -42,6 +43,9 @@ WebDriver driver;
 	
 	public class audiencepagelocators extends AudiencePage
 	{
+		
+		//Audience -Persona Page Locators
+		
 		//create persona
 		public static final String createnewbutton="//button[contains(text(),'Create New')]";
 		public static final String personaname="personaname";
@@ -60,10 +64,14 @@ WebDriver driver;
 		public static final String selectGreaterThanOrEqual="//div[contains(text(),'Greater than Or Equal')]";
 		
 		public static final String selectUserType="//*[@id='selected_user_']";
-		public static final String selectStaffUserType="//div[contains(text(),'Staff')]";
+		public static final String clickStaffUserTypeOption="//*[@id='page-wrapper']/div[2]/div[2]/div[1]/div[2]/div/a";
+		public static final String selectStaffUserTypeOption="//a[contains(text(),'Staff')]";
 		
 		public static final String selectInternalOption="//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[5]/div/div";
 		public static final String alertMessageemptyValue="alertMessageemptyValue";
+		
+		
+		//Audience-Individuals Page Locators
 		
 		//import functionality
 		public static final String clickIndividualsTab="//button[contains(text(),'Individuals')]";
@@ -75,12 +83,16 @@ WebDriver driver;
 		public static final String clickCustomAttributeBuuton="//button[@class='btn btn-white btn-sm ng-scope'][2]";
 		
 		public static final String selectGroupDDL="//span[contains(text(),'Select or search group name')]";
-		public static final String selectGroupName="//div[contains(text(),'Academics group')]";
+		public static final String selectGroupName="//div[contains(text(),'Additional Information')]";
 		
 		public static final String enterFieldName="//input[@name='name' and @type='text']";
 		public static final String enterFieldType="//span[contains(text(),'Select field type')]";
+		
+		public static final String selectTextFieldType="//div[contains(text(),'Textbox')]";
+		
 		public static final String enterFieldDesc="//label[contains(text(),' Field Description* ')]//following::textarea";
 		public static final String enterValidateAs="//span[contains(text(),'Select or search validate as')]";
+		public static final String clickValidateAsOption="//span[contains(text(),'Select or search validate as')]";
 		public static final String selectValidateAsText="//div[contains(text(),'Text')]";
 		
 		public static final String enterCharacterLimit="//input[@placeholder='Character limit']";
@@ -88,6 +100,43 @@ WebDriver driver;
 		public static final String attributeTable="//table[@class='table table-striped margin-bottom-0']";
 		public static final String clickCreateAndContinue="//span[contains(text(),'Create and Continue')]";
 		public static final String attributeCreatedSuccessMsg="//div[contains(text(),'Attribute(s) created successfully')]";
+		
+		//Staff-Personal information
+		public static final String enterStaffID="//input[@placeholder='Staff ID']";
+		public static final String enterFirstName="//input[@placeholder='First name']";
+		public static final String enterLastName="//input[@placeholder='Last name']";
+		public static final String enterEmail	="//input[@placeholder='Email']";
+		public static final String clickCampusDDL	="//input[@id='multi_search_input_campus']";
+		public static final String selectCampus="//*[@id='ui-select-choices-row-54-1']/a/div";
+		public static final String clickDeptDDL="//span[@id='select_placeholder_department']";
+		public static final String enterDeptValue="//input[@id='ui_select_search_input_department']";
+		
+		public static final String selectDept="//*[@id='ui-select-choices-row-28-4']";
+		
+		public static final String clickrolesDDL="//span[@id='select_placeholder_role']";
+		
+		//public static final String enterRoleValue="//inputid="ui_select_search_input_role"
+		public static final String selectAdmin="//div[contains(text(),'Admin')]";
+		public static final String selectITSupport="//div[contains(text(),'IT Support')]";
+		public static final String selectSuperAdmin="//div[contains(text(),'Super Admin')]";
+		
+		
+		
+		
+		public static final String clickAdd="//button[@class='btn btn-sm btn-primary pull-right margin-top-175']";
+				
+		public static final String clickCreateAndContine="//span[contains(text(),'Create and Continue')]";
+		public static final String clickCreate="//span[contains(text(),'Create and Continue')]//following::span[2]";
+		public static final String clickCancel="//button[contains(text(),'Cancel')]";
+		
+		//filter option
+		
+		public static final String clickFilterButton="//*[@id='page-wrapper']/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div[1]/div/div[2]/button[1]";
+		public static final String enterName="//input[@placeholder='Search by name']";
+		public static final String clickApply="//button[contains(text(),'Apply')]";
+		
+		public static final String staffCreationSuccessMsg="//div[contains(text(),'Staff account created successfully, an activation email has been send to the registered email address.')]";
+		
 		
 	}
 	
@@ -1095,6 +1144,53 @@ WebDriver driver;
 		 //driver.findElement(By.xpath("//span[contains(text(),'Select or search group name')]")).click();
 			
 		 Boolean groupcreated= driver.findElement(By.xpath("//span[contains(text(),'Student group')]")).isDisplayed();
+		 
+		 Assert.assertTrue(groupcreated, "Created group is displayed in dropdown");
+	}
+	
+	public void validateTC_AI_066() throws InterruptedException
+	{
+		 gm.navigateToAudiencePage();
+		 
+		
+		 
+		 Thread.sleep(5000);
+		 
+		 driver.findElement(By.xpath(audiencepagelocators.clickIndividualsTab)).click();
+		 
+		 
+		 driver.findElement(By.xpath(audiencepagelocators.selectUserType)).click();
+		 
+		 driver.findElement(By.xpath(audiencepagelocators.selectStaffUserTypeOption)).click();
+
+		 Thread.sleep(5000);
+		 //clicking on custom attributes button
+		 driver.findElement(By.xpath("//button[@class='btn btn-white btn-sm ng-scope'][2]")).click();
+		
+		
+		 Thread.sleep(5000);
+		 driver.findElement(By.xpath("//a[@class='poll-type-create-new-btn']")).click();
+		 
+		 driver.findElement(By.xpath("//input[@placeholder='Group name']")).sendKeys("Staff group");
+		
+		 //clicking on create group button
+		 List<WebElement> buttons = driver.findElements(By.xpath("//button[@class='ladda-button btn btn-primary ng-binding ng-scope']"));
+		 buttons.get(2).click();
+		 
+		 Thread.sleep(5000);
+		 
+		 Boolean groupcreatedsuccessmsg=driver.findElement(By.xpath("//div[contains(text(),'Group created successfully')]")).isDisplayed();
+		 
+		 Assert.assertTrue(groupcreatedsuccessmsg, "Success message is displayed after creating group");
+		 
+		 WebElement element = driver.findElement(By.xpath("//span[contains(text(),'Select or search group name')]"));
+				 
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+		
+		 
+		 //driver.findElement(By.xpath("//span[contains(text(),'Select or search group name')]")).click();
+			
+		 Boolean groupcreated= driver.findElement(By.xpath("//span[contains(text(),'Staff group')]")).isDisplayed();
 		 
 		 Assert.assertTrue(groupcreated, "Created group is displayed in dropdown");
 	}

@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+<testng-results skipped="0" failed="0" ignored="7" total="8" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="51418" started-at="2020-08-03T14:21:37Z" finished-at="2020-08-03T14:22:28Z">
+  <suite name="Suite" duration-ms="50339" started-at="2020-08-04T18:10:11Z" finished-at="2020-08-04T18:11:01Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="51418" started-at="2020-08-03T14:21:37Z" finished-at="2020-08-03T14:22:28Z">
+    <test name="Test" duration-ms="50339" started-at="2020-08-04T18:10:11Z" finished-at="2020-08-04T18:11:01Z">
       <class name="Test.AudienceTest">
-        <test-method status="PASS" signature="setExtent()[pri:0, instance:Test.AudienceTest@55a1c291]" name="setExtent" is-config="true" duration-ms="249" started-at="2020-08-03T14:21:37Z" finished-at="2020-08-03T14:21:37Z">
+        <test-method status="PASS" signature="setExtent()[pri:0, instance:Test.AudienceTest@2145433b]" name="setExtent" is-config="true" duration-ms="223" started-at="2020-08-04T18:10:11Z" finished-at="2020-08-04T18:10:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtent -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Test.AudienceTest@55a1c291]" name="setUp" is-config="true" duration-ms="19232" started-at="2020-08-03T14:21:37Z" finished-at="2020-08-03T14:21:56Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Test.AudienceTest@2145433b]" name="setUp" is-config="true" duration-ms="18776" started-at="2020-08-04T18:10:11Z" finished-at="2020-08-04T18:10:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validateTC_AP_074()[pri:2, instance:Test.AudienceTest@55a1c291]" name="validateTC_AP_074" duration-ms="29707" started-at="2020-08-03T14:21:56Z" finished-at="2020-08-03T14:22:26Z">
+        <test-method status="PASS" signature="vaidateTC_AI_051()[pri:8, instance:Test.AudienceTest@2145433b]" name="vaidateTC_AI_051" duration-ms="29642" started-at="2020-08-04T18:10:30Z" finished-at="2020-08-04T18:11:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateTC_AP_074 -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:Test.AudienceTest@55a1c291]" name="tearDown" is-config="true" duration-ms="1347" started-at="2020-08-03T14:22:26Z" finished-at="2020-08-03T14:22:27Z">
+        </test-method> <!-- vaidateTC_AI_051 -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:Test.AudienceTest@2145433b]" name="tearDown" is-config="true" duration-ms="1122" started-at="2020-08-04T18:11:00Z" finished-at="2020-08-04T18:11:01Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=validateTC_AP_074 status=SUCCESS method=AudienceTest.validateTC_AP_074()[pri:2, instance:Test.AudienceTest@55a1c291] output={null}]]]>
+                <![CDATA[[TestResult name=vaidateTC_AI_051 status=SUCCESS method=AudienceTest.vaidateTC_AI_051()[pri:8, instance:Test.AudienceTest@2145433b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:Test.AudienceTest@55a1c291]" name="endReport" is-config="true" duration-ms="847" started-at="2020-08-03T14:22:27Z" finished-at="2020-08-03T14:22:28Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:Test.AudienceTest@2145433b]" name="endReport" is-config="true" duration-ms="548" started-at="2020-08-04T18:11:01Z" finished-at="2020-08-04T18:11:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->

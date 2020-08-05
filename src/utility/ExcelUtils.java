@@ -7,19 +7,23 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 import org.yaml.snakeyaml.scanner.Constant;
 import org.apache.poi.ss.usermodel.Row.MissingCellPolicy;
 
 public class ExcelUtils {
 
-	private static XSSFSheet ExcelWSheet;
+	private static HSSFSheet ExcelWSheet;
 
-	private static XSSFWorkbook ExcelWBook;
+	private static HSSFWorkbook ExcelWBook;
 
-	private static XSSFCell Cell;
+	private static HSSFCell Cell;
 
-	private static XSSFRow Row;
+	private static HSSFRow Row;
 	private static MissingCellPolicy xRow;
 
 	// This method is to set the File path and to open the Excel file, Pass Excel
@@ -35,7 +39,7 @@ public class ExcelUtils {
 
 			// Access the required test data sheet
 
-			ExcelWBook = new XSSFWorkbook(ExcelFile);
+			ExcelWBook = new HSSFWorkbook(ExcelFile);
 
 			ExcelWSheet = ExcelWBook.getSheet(SheetName);
 

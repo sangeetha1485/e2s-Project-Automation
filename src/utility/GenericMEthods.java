@@ -3,6 +3,7 @@ package utility;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -34,6 +35,7 @@ public class GenericMEthods extends FunctionalTest{
 	    
 	   
 
+	private String text;
 	public void navigateToHomePage() throws InterruptedException
 	{
 	
@@ -130,6 +132,14 @@ public class GenericMEthods extends FunctionalTest{
 	
 	}
 	
+	public void scrollToElement( String locator) throws InterruptedException
+	{
+		 WebElement element = driver.findElement(By.xpath(locator));
+		 
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+		
+	
+	}
 	
 	public boolean assertTrue(boolean condition,String message)
 	{
@@ -142,6 +152,28 @@ public class GenericMEthods extends FunctionalTest{
 
 	}
 
+	
+	public boolean verifyElementCustomAttributeTable(String locator,String attribute)
+	{
+		
+		 List<WebElement> tableLinks = driver.findElements(By.xpath(locator));
+		 
+			for(int i=0;i<tableLinks.size();i++)
+			{
+					if(tableLinks.get(i).getText().contains(attribute));
+					{
+						System.out.println("added attribute is displayed in grid");
+						return true;
+						
+					}
+					
+			}
+			return false;
+		
+		
+	}
+	
+	
 	public static void Wait(String locator)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,20);
@@ -179,6 +211,68 @@ public class GenericMEthods extends FunctionalTest{
 		}
 	}
 	
+	
+	public String getText(String locatortype,String locator)
+	{
+		String text = null;
+		switch(locatortype)
+		{
+		
+		case "Xpath":
+		
+			text=driver.findElement(By.xpath(locator)).getText();
+		
+		break;
+		
+		case "Name":
+		
+			driver.findElement(By.name(locator)).click();
+		
+		break;
+			
+		
+		
+		case "LinkText":
+		
+		driver.findElement(By.linkText(locator)).click();
+		break;
+		
+		}
+		
+		return text;
+	}
+	
+	
+	public boolean isDisplayed(String locatortype,String locator)
+	{
+		boolean text = false;
+		switch(locatortype)
+		{
+		
+		case "Xpath":
+		
+			text=driver.findElement(By.xpath(locator)).isDisplayed();
+		
+		break;
+		
+		case "Name":
+		
+			driver.findElement(By.name(locator)).click();
+		
+		break;
+			
+		
+		
+		case "LinkText":
+		
+		driver.findElement(By.linkText(locator)).click();
+		break;
+		
+		}
+		return text;
+		
+		
+	}
 	public void SendKeys(String locatortype,String locator,String value)
 	{
 		switch(locatortype)

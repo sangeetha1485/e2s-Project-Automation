@@ -7,9 +7,16 @@ package utility;
       public static final String Username = "imu-qa@yopmail.com ";
  
       public static final String Password = "demo";
+      public static String currentDir = System.getProperty("user.dir");
+		
+		
+		
+		
+		
+      public static final String Path_TestData =  "C://Users//HP//Documents//Book1.xls";
+      
+      
  
-      public static final String Path_TestData = "D://ToolsQA//OnlineStore//src//testData//";
- 
-      public static final String File_TestData = "TestData.xlsx";
+      public static final String File_TestData = "Sheet1";
  
    }
