@@ -129,13 +129,29 @@ WebDriver driver;
 		public static final String clickCreate="//span[contains(text(),'Create and Continue')]//following::span[2]";
 		public static final String clickCancel="//button[contains(text(),'Cancel')]";
 		
-		//filter option
+		//Individuals Home Page
 		
 		public static final String clickFilterButton="//*[@id='page-wrapper']/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div[1]/div/div[2]/button[1]";
-		public static final String enterName="//input[@placeholder='Search by name']";
+		
+		public static final String enterEmailIDfilter="//input[@placeholder='Search by email ID']";
 		public static final String clickApply="//button[contains(text(),'Apply')]";
 		
 		public static final String staffCreationSuccessMsg="//div[contains(text(),'Staff account created successfully, an activation email has been send to the registered email address.')]";
+		
+		public static final String clickSelectAllOption="//label[@class='ng-binding']/div[@class='icheckbox_square-green']/ins";
+		
+		public static final String clickActionsButton="//button[contains(text(),'Actions')]";
+		
+		public static final String selectEmailOption="//a[contains(text(),'Email')]";
+		public static final String enterMailSubject="//label[contains(text(),'Subject* ')]//following::input[1]";
+		public static final String enterMailContent="//div[@class='note-editable panel-body']";
+		public static final String clickSend="//span[contains(text(),'Send')]";
+		
+		public static final String clickUpdateBuuton="//span[contains(text(),'Update')]";
+		
+		
+		//Audience Groups Locators
+		public static final String clickGroupsTab="//button[contains(text(),'Groups')]";
 		
 		
 	}
@@ -418,9 +434,9 @@ WebDriver driver;
 		Thread.sleep(3000);
 		
 		
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search value')]")).click();
+		driver.findElement(By.xpath("//input[@placeholder='Value']")).click();
 		
-		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys("2009");
+		driver.findElement(By.xpath("//input[@placeholder='Value']")).sendKeys("2009");
 		
 		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys(Keys.ENTER);
 		
@@ -1008,7 +1024,7 @@ WebDriver driver;
 		 
 		 Thread.sleep(5000);
 		 
-		 driver.findElement(By.xpath("//button[contains(text(),'Individuals')]")).click();
+		 driver.findElement(By.xpath(audiencepagelocators.clickIndividualsTab)).click();
 		 
 		 Thread.sleep(5000);
 		 //clicking on filter button

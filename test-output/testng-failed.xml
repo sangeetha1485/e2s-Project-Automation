@@ -8,7 +8,7 @@
     <classes>
       <class name="Test.AudienceTest">
         <methods>
-          <include name="validateTC_AI_066"/>
+          <include name="validateTC_AG_021"/>
           <include name="setExtent"/>
           <include name="setUp"/>
           <include name="tearDown"/>
