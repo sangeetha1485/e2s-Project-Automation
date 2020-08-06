@@ -153,6 +153,16 @@ WebDriver driver;
 		//Audience Groups Locators
 		public static final String clickGroupsTab="//button[contains(text(),'Groups')]";
 		
+		public static final String importUsersRadioButton="//div[@class='iradio_square-green']//following::ins[1]";
+		public static final String clickUploadButton="//button[contains(text(),'Upload')]";
+		
+		public static final String clickContinueButton="//button[contains(text(),'Continue')]";
+		
+		public static final String clickAdduser="//button[contains(text(),'Add')]";
+		
+		public static final String totalUsersUploadedCount="//div[contains(text(),'Total audience count matching with above selection:')]//following::span[1]";
+		public static final String invaliFileErrorMsg="//div[contains(text(),'File format is invalid. Please correct it and try again')]";
+		
 		
 	}
 	
