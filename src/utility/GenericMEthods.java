@@ -82,7 +82,7 @@ public class GenericMEthods extends FunctionalTest {
 	}
 
 	public void navigateToAudiencePage() throws InterruptedException {
-		Thread.sleep(6000);
+		Thread.sleep(10000);
 
 		WebElement options = driver.findElement(By.xpath("//div[@class='sidebar-collapse']"));
 //

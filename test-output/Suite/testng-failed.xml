@@ -8,10 +8,13 @@
     <classes>
       <class name="Test.AudienceTest">
         <methods>
+          <include name="validateTC_AP_029"/>
+          <include name="vaidateTC_AP_013"/>
+          <include name="vaidateTC_AP_011"/>
+          <include name="vaidateTC_AP_012"/>
           <include name="setExtent"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="vaidateTC_AG_014"/>
           <include name="endReport"/>
         </methods>
       </class> <!-- Test.AudienceTest -->

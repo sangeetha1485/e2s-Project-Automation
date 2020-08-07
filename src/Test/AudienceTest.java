@@ -1,6 +1,7 @@
 package Test;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.awt.AWTException;
 import java.io.BufferedReader;
@@ -33,50 +34,733 @@ public class AudienceTest extends FunctionalTest {
 
 	GenericMEthods gm = new GenericMEthods();
 
-	public void executePollsTestCases() throws InterruptedException {
+	
+	
+	
+	@Test(priority = 1, enabled = true)
+	public void vaidateTC_AP_006() throws InterruptedException
+	{
+		extentTest = extent.startTest("vaidateTC_AP_006");
+		gm.navigateToAudiencePage();
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		
+		driver.findElement(By.name("personaname")).sendKeys("testpersona4");
+		
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//*[@id='selected_user_']")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Staff')]")).click();
+		
 
-		// ap.test2729();
-
-		// ap.vaidateCreatePersona();
-
-		// ap.vaidateCreateGroups();
-
-		// ap.validateAlertMsgInvalidMobile();
-		// ap.validateCreateAttributeSuccessmsg();
-
-		// ap.vaidateTC_AP_006();
-
-		// ap.vaidateTC_AP_007();
-
-		// ap.vaidateTC_AP_010();
-
-		// ap.vaidateTC_AP_012();
-		// ap.vaidateTC_AP_013();
-
-		// ap.vaidateTC_AP_014();
-
-		// ap.vaidateTC_AP_018();
-
-		// ap.vaidateTC_AP_027();
-
-		// ap.vaidateTC_AP_032();
-		// ap.vaidateTC_AP_033();
-
-		// ap.vaidateTC_AP_034();
-		// ap.vaidateTC_AP_036();
-
-		// ap.vaidateTC_AI_005();
-
-		// ap.vaidateTC_AI_020();
-
-		// ap.validateTC_AI_033();
-
-		// ap.validateTC_AI_030();
-
-		// ap.validateTC_AI_066();
+		
+		String assertInternalOption=driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[5]/div/div")).getText();
+		
+		System.out.println("expected text "+assertInternalOption);
+		Thread.sleep(5000);
+		
+		
+		
+		Assert.assertEquals(assertInternalOption," Internal","Internal option is present for staff user type");
+		
 	}
 
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 2, enabled = true)
+	public void vaidateTC_AP_007() throws InterruptedException
+	{
+		gm.navigateToAudiencePage();
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		
+		driver.findElement(By.name("personaname")).sendKeys("testpersona4");
+		
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//*[@id='selected_user_']")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Staff')]")).click();
+	
+
+		driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[5]/div/div/div/ins")).click();
+		
+		Thread.sleep(5000);
+		
+		Boolean assertInternalOptiondisplayed=driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[5]/div/div/div")).isDisplayed();
+		
+		
+		Assert.assertTrue(assertInternalOptiondisplayed, "Internal option can be selected");
+		
+		
+		
+		
+		
+	}
+	
+	@Test(priority = 3, enabled = true)
+	public void vaidateTC_AP_010() throws InterruptedException
+	{
+		gm.navigateToAudiencePage();
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		
+		driver.findElement(By.name("personaname")).sendKeys("testpersona4");
+		
+		
+		
+		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys("test");
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Graduation Year')]")).click();
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
+		
+		
+		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
+		Thread.sleep(2000);
+		
+		
+		Boolean alertdisplayed=driver.findElement(By.xpath("//div[contains(text(),'Please enter value')]")).isDisplayed();
+		
+		Assert.assertTrue(alertdisplayed, "Alert message is displayed for leaving value field empty");
+		
+		
+		
+		
+		
+	}
+	
+	@Test(priority = 4, enabled = true)
+	public void vaidateTC_AP_011() throws InterruptedException
+	{
+		gm.navigateToAudiencePage();
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		
+		driver.findElement(By.name("personaname")).sendKeys("testpersona4");
+		
+		
+		
+		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys("test");
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
+		
+		driver.findElement(By.xpath("//input[@placeholder='Value']")).sendKeys("12");
+		
+		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
+		Thread.sleep(2000);
+		
+		
+		Boolean alertdisplayed=driver.findElement(By.xpath("//div[contains(text(),'Please select value')]")).isDisplayed();
+		
+		Assert.assertTrue(alertdisplayed, "Alert message is displayed for leaving value field empty");
+		
+		
+		
+		
+		
+	}
+	
+	@Test(priority = 5, enabled = true)
+	public void vaidateTC_AP_012() throws InterruptedException
+	{
+		gm.navigateToAudiencePage();
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		
+		driver.findElement(By.name("personaname")).sendKeys("testpersona4");
+		
+		//driver.findElement(By.xpath("//a[@class='select2-choice ui-select-match']//following::span[@class='select2-chosen ng-binding ng-hide']")).click();
+		
+		//driver.findElement(By.xpath("//div[contains(text(),'Staff')]")).click();
+		
+		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys("test");
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
+		
+		Thread.sleep(3000);
+		
+		
+		driver.findElement(By.xpath("//input[@placeholder='Value']")).click();
+		
+		driver.findElement(By.xpath("//input[@placeholder='Value']")).sendKeys("12");
+		
+		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys(Keys.ENTER);
+		
+		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
+		Thread.sleep(3000);
+		
+		
+		Boolean attributePresent=driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr/td[1]")).isDisplayed();
+		
+		Boolean attributeOperator=driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr/td[2]")).isDisplayed();
+		
+		Boolean attributeValue=driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr/td[3]")).isDisplayed();
+		
+		
+		
+		if(attributePresent && attributeOperator && attributeValue)
+		{
+			System.out.println("created rule is displayed");
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	@Test(priority = 6, enabled = true)
+	public void vaidateTC_AP_013() throws InterruptedException
+	{
+		gm.navigateToAudiencePage();
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		
+		driver.findElement(By.name("personaname")).sendKeys("testpersona4");
+		
+		//driver.findElement(By.xpath("//a[@class='select2-choice ui-select-match']//following::span[@class='select2-chosen ng-binding ng-hide']")).click();
+		
+		//driver.findElement(By.xpath("//div[contains(text(),'Staff')]")).click();
+		
+		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys("test");
+		
+		//entering first rule
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
+		
+		Thread.sleep(3000);
+		
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search value')]")).click();
+		
+		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys("12");
+		
+		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys(Keys.ENTER);
+		
+		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
+		Thread.sleep(3000);
+		
+		
+		//entering second rule
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Program')]")).click();
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
+		
+		Thread.sleep(3000);
+		
+		
+		//driver.findElement(By.xpath("//span[contains(text(),'Select or search value')]")).click();
+		
+		
+		driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input")).sendKeys("Medical Biotechnology");
+		
+		//driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys(Keys.ENTER);
+		
+		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
+		Thread.sleep(3000);
+		
+		
+		Boolean attributePresent=driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr/td[1]")).isDisplayed();
+		
+		Boolean attributeOperator=driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr/td[2]")).isDisplayed();
+		
+		Boolean attributeValue=driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr/td[3]")).isDisplayed();
+		
+		Boolean attributePresent1=driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr[2]/td[1]")).isDisplayed();
+		
+		Boolean attributeOperator1=driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr[2]/td[2]")).isDisplayed();
+		
+		Boolean attributeValue1=driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr[2]/td[3]")).isDisplayed();
+		
+		if(attributePresent && attributeOperator && attributeValue && attributePresent1 && attributeOperator1 && attributeValue1)
+		{
+			System.out.println("created rule is displayed");
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	@Test(priority = 7, enabled = true)
+	public void vaidateTC_AP_014() throws InterruptedException
+	{
+		gm.navigateToAudiencePage();
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		
+		driver.findElement(By.name("personaname")).sendKeys("testpersona4");
+		
+		
+		
+		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys("test");
+		
+		
+		
+		
+		//adding rule
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
+		
+		Thread.sleep(3000);
+		
+		
+	
+		
+		
+		driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input")).sendKeys("12");
+		
+		
+		
+		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
+		Thread.sleep(3000);
+		
+		//*[@id="page-wrapper"]/div[2]/div[2]/form/div/div/div/div[6]/div[2]/div[2]/div/div/table/tbody/tr/td[4]
+		
+		//clicking on edit
+		driver.findElement(By.xpath("//i[@class='fa fa-pencil']")).click();
+		Thread.sleep(3000);
+		
+	   driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[6]/div[2]/div[1]/div[2]/div/div/a/span[2]/span")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Not Equals')]")).click();
+		
+		Thread.sleep(3000);
+		
+		
+	
+		
+		
+		
+		
+		driver.findElement(By.xpath("//span[@class='audience-create-add-btn ng-scope']//i")).click();
+		Thread.sleep(3000);
+		
+		String newrule=driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr/td[2]")).getText();
+		
+		Assert.assertEquals(newrule, "Not Equals","user is able to edit rule added");
+		
+		
+		
+		
+	}
+	
+	@Test(priority = 8, enabled = true)
+	public void vaidateTC_AP_018() throws InterruptedException
+	{
+		gm.navigateToAudiencePage();
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		
+		driver.findElement(By.name("personaname")).sendKeys("testpersona4");
+		
+		
+		
+		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys("test");
+		
+		
+		
+		
+		//adding rule
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
+		
+		Thread.sleep(3000);
+		
+		
+	
+		
+		
+		driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input")).sendKeys("12");
+		
+		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
+		Thread.sleep(3000);
+		
+		
+		//clicking on apply
+		driver.findElement(By.xpath("//button[@class='ladda-button btn btn-primary btn-sm']")).click();
+		Thread.sleep(3000);
+		
+		//clicking total audience count link
+		driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[7]/div[1]/div/span/a")).click();
+		
+	
+		
+		Thread.sleep(3000);
+		
+		String assertmanageaudience=driver.findElement(By.xpath("//div[@class='col-sm-8 right-side-popup-heading ng-binding']")).getText();
+		
+		Assert.assertEquals(assertmanageaudience, "Manage Audience","Manage audience page pop is displayed ");
+		
+		
+		
+		
+		
+	}
+	
+	@Test(priority = 9, enabled = true)
+	public void vaidateTC_AP_027() throws InterruptedException
+	{
+		gm.navigateToAudiencePage();
+		
+		Thread.sleep(10000);
+		
+		
+		
+	driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/div[2]/div/div/div[1]/div/div/div[2]/button[1]")).click();
+	
+	driver.findElement(By.xpath("//span[contains(text(),'Select or search status')]")).click();
+	
+	//selecting active records
+	driver.findElement(By.xpath("//div[contains(text(),'Active')]")).click();
+	
+	driver.findElement(By.xpath("//span[contains(text(),'Apply')]")).click();
+	Thread.sleep(3000);
+	
+	List<WebElement> activepersonas=driver.findElements(By.xpath("//span[@id='switchery_id']"));
+	
+	System.out.println(activepersonas.size());
+	
+	
+	
+	Thread.sleep(5000);
+	
+	if(activepersonas.size()!=0)
+	{
+	for(int i=0;i<activepersonas.size();i++)
+	{
+		
+		
+		String bordercolor=driver.findElements(By.xpath("//span[@id='switchery_id']")).get(i).getCssValue("border-color");
+		
+		System.out.println(bordercolor);
+		
+		Assert.assertEquals(bordercolor, "rgb(26, 179, 148)","Active personas are displayed in green");	
+	}
+	}
+	
+	//selecting inactive records
+		driver.findElement(By.xpath("//span[contains(text(),'Active')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Inactive')]")).click();
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Apply')]")).click();
+		Thread.sleep(3000);
+		
+		List<WebElement> inactivepersonas=driver.findElements(By.xpath("//span[@id='switchery_id']"));
+		
+		System.out.println(inactivepersonas.size());
+		
+		
+		
+		Thread.sleep(5000);
+		
+		if(inactivepersonas.size()!=0)
+		{
+		for(int i=0;i<inactivepersonas.size();i++)
+		{
+			
+			
+			String bordercolor=driver.findElements(By.xpath("//span[@id='switchery_id']")).get(i).getCssValue("border-color");
+			
+			System.out.println(bordercolor);
+			
+			Assert.assertEquals(bordercolor, "rgb(223, 223, 223)","Inactive personas are displayed in grey");	
+		}
+		}
+		
+	
+	}
+	
+	
+	@Test(priority = 10, enabled = true)
+	public void vaidateTC_AP_032() throws InterruptedException
+	{
+        gm.navigateToAudiencePage();
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		
+		driver.findElement(By.name("personaname")).sendKeys("testpersona4");
+		
+		
+		
+		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys("test");
+		
+		
+		
+		
+		//adding rule
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
+		
+		Thread.sleep(3000);
+		
+		
+	
+		
+		
+		driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input")).sendKeys("12");
+		
+		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
+		Thread.sleep(3000);
+		
+		
+		//clicking on apply
+		driver.findElement(By.xpath("//button[@class='ladda-button btn btn-primary btn-sm']")).click();
+		Thread.sleep(3000);
+		
+		//clicking total audience count link
+		driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[7]/div[1]/div/span/a")).click();
+		
+	
+		
+		Thread.sleep(3000);
+		
+		String assertmanageaudience=driver.findElement(By.xpath("//div[@class='col-sm-8 right-side-popup-heading ng-binding']")).getText();
+		
+		Assert.assertEquals(assertmanageaudience, "Manage Audience","Manage audience page pop is displayed ");
+		
+		Boolean userpresent=driver.findElement(By.xpath("//*[@id='manulaclick']/table/tbody/tr/td[2]")).isDisplayed();
+		
+		Assert.assertTrue(userpresent, "users are displayed in manage audience popup");
+		
+		
+	
+	}
+	
+	@Test(priority = 11, enabled = true)
+	public void vaidateTC_AP_033() throws InterruptedException
+	{
+        gm.navigateToAudiencePage();
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		
+		driver.findElement(By.name("personaname")).sendKeys("testpersona4");
+		
+		
+		
+		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys("test");
+		
+		
+		
+		
+		//adding rule
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Not Equals')]")).click();
+		
+		Thread.sleep(3000);
+		
+		
+	
+		
+		
+		driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input")).sendKeys("12");
+		
+		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
+		Thread.sleep(3000);
+		
+		
+		//clicking on apply
+		driver.findElement(By.xpath("//button[@class='ladda-button btn btn-primary btn-sm']")).click();
+		Thread.sleep(3000);
+		
+		
+		Boolean NotEqualsRulePresent=driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr/td[2]")).isDisplayed();
+		
+		//*[@id="page-wrapper"]/div[2]/div[2]/form/div/div/div/div[6]/div[2]/div[2]/div/div/table/tbody/tr/td[2]
+		
+		Assert.assertTrue(NotEqualsRulePresent, "Not equal option is added");
+	
+	}
+	
+	@Test(priority = 12, enabled = true)
+	public void vaidateTC_AP_034() throws InterruptedException
+	{
+        gm.navigateToAudiencePage();
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		
+		driver.findElement(By.name("personaname")).sendKeys("testpersona4");
+		
+		
+		
+		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys("test");
+		
+		
+		
+		
+		//adding rule
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Greater than Or Equal')]")).click();
+		
+		Thread.sleep(3000);
+		
+		
+	
+		
+		
+		driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input")).sendKeys("5");
+		
+		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
+		Thread.sleep(3000);
+		
+		
+		//clicking on apply
+		driver.findElement(By.xpath("//button[@class='ladda-button btn btn-primary btn-sm']")).click();
+		Thread.sleep(3000);
+		
+		
+		Boolean GreaterthanorequalRulePresent=driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr/td[2]")).isDisplayed();
+		
+
+		
+		Assert.assertTrue(GreaterthanorequalRulePresent, "Greater than or equal option is added");
+	
+	}
+	
+	@Test(priority = 13, enabled = true)
+	public void vaidateTC_AP_036() throws InterruptedException
+	{
+        gm.navigateToAudiencePage();
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		
+		driver.findElement(By.name("personaname")).sendKeys("testpersona4");
+		
+		
+		
+		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys("test");
+		
+		
+		
+		
+		//adding rule
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Greater than')]")).click();
+		
+		Thread.sleep(3000);
+		
+		
+	
+		
+		
+		driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input")).sendKeys("5");
+		
+		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
+		Thread.sleep(3000);
+		
+		
+		//clicking on apply
+		driver.findElement(By.xpath("//button[@class='ladda-button btn btn-primary btn-sm']")).click();
+		Thread.sleep(3000);
+		
+		
+		Boolean GreaterthanRulePresent=driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr/td[2]")).isDisplayed();
+		
+
+		
+		Assert.assertTrue(GreaterthanRulePresent, "Greater than option is added");
+	
+	}
+	
+	@Test(priority = 14, enabled = true)
 	public void validateTC_AP_029() throws InterruptedException {
 
 		extentTest = extent.startTest("validateTC_AP_029");
@@ -121,9 +805,9 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 2, enabled = false)
-	public void validateTC_AP_074() throws InterruptedException, IOException {
-		extentTest = extent.startTest("validateTC_AP_074");
+	@Test(priority = 15, enabled = false)
+	public void validateTC_AI_074() throws InterruptedException, IOException {
+		extentTest = extent.startTest("validateTC_AI_074");
 		gm.navigateToAudiencePage();
 		Thread.sleep(5000);
 
@@ -152,9 +836,9 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 3, enabled = false)
-	public void validateTC_AP_064() throws InterruptedException, IOException {
-		extentTest = extent.startTest("validateTC_AP_064");
+	@Test(priority = 16, enabled = false)
+	public void validateTC_AI_064() throws InterruptedException, IOException {
+		extentTest = extent.startTest("validateTC_AI_064");
 		gm.navigateToAudiencePage();
 		Thread.sleep(5000);
 
@@ -203,9 +887,9 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 4, enabled = false)
+	@Test(priority = 17, enabled = true)
 	public void validateTC_AI_073() throws InterruptedException, IOException {
-		extentTest = extent.startTest("validateTC_AP_073");
+		extentTest = extent.startTest("validateTC_AI_073");
 		gm.navigateToAudiencePage();
 		Thread.sleep(5000);
 
@@ -235,7 +919,7 @@ public class AudienceTest extends FunctionalTest {
 		}
 	}
 
-	@Test(priority = 5, enabled = false)
+	@Test(priority = 18, enabled = false)
 	public void validateTC_AI_086() throws InterruptedException, IOException {
 		extentTest = extent.startTest("validateTC_AI_086");
 		gm.navigateToAudiencePage();
@@ -257,9 +941,9 @@ public class AudienceTest extends FunctionalTest {
 		Assert.assertTrue(individualspagedisplayed, "On clicking cancel,Individuals home page is displayed");
 	}
 
-	@Test(priority = 6, enabled = false)
+	@Test(priority = 19, enabled = false)
 	public void validateTC_AI_087() throws Exception {
-		extentTest = extent.startTest("validateTC_AI_086");
+		extentTest = extent.startTest("validateTC_AI_087");
 		gm.navigateToAudiencePage();
 		Thread.sleep(5000);
 
@@ -318,7 +1002,7 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 7, enabled = false)
+	@Test(priority = 20, enabled = false)
 	public void validateTC_AI_066() throws InterruptedException {
 		extentTest = extent.startTest("validateTC_AI_066");
 
@@ -363,7 +1047,7 @@ public class AudienceTest extends FunctionalTest {
 		Assert.assertTrue(groupcreated, "Created group is displayed in dropdown");
 	}
 
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 21, enabled = false)
 	public void vaidateTC_AI_051() throws InterruptedException {
 		extentTest = extent.startTest("validateTC_AI_051");
 		gm.navigateToAudiencePage();
@@ -397,7 +1081,7 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 9, enabled = false)
+	@Test(priority = 22, enabled = false)
 	public void vaidateTC_AI_089() throws Exception {
 		extentTest = extent.startTest("validateTC_AI_089");
 		gm.navigateToAudiencePage();
@@ -446,7 +1130,7 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 10, enabled = false)
+	@Test(priority = 23, enabled = false)
 	public void vaidateTC_AI_091() throws Exception {
 		extentTest = extent.startTest("validateTC_AI_091");
 		gm.navigateToAudiencePage();
@@ -492,7 +1176,7 @@ public class AudienceTest extends FunctionalTest {
 
 		gm.SendKeys("Xpath", audiencepagelocators.enterFirstName, ExcelUtils.getCellData(1, 1));
 
-		gm.click("Xpath", audiencepagelocators.clickUpdateBuuton);
+		gm.click("Xpath", audiencepagelocators.clickUpdateButton);
 		Thread.sleep(3000);
 
 		String updatesuccessmsg = gm.getText("Xpath", "//div[contains(text(),'Staff account updated successfully.')]");
@@ -501,8 +1185,9 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 11, enabled = false)
+	@Test(priority = 24, enabled = false)
 	public void vaidateTC_AI_020() throws InterruptedException {
+		extentTest = extent.startTest("vaidateTC_AI_020");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(5000);
@@ -528,7 +1213,7 @@ public class AudienceTest extends FunctionalTest {
 		Assert.assertTrue(StudentPresent, "Student details related to entered email id is displayed");
 	}
 
-	@Test(priority = 12, enabled = false)
+	@Test(priority = 25, enabled = false)
 	public void vaidateTC_AG_008() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AG_008");
 		gm.navigateToAudiencePage();
@@ -595,7 +1280,7 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 13, enabled = false)
+	@Test(priority = 26, enabled = false)
 	public void validateTC_AG_021() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AG_021");
 		gm.navigateToAudiencePage();
@@ -653,7 +1338,7 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 14, enabled = false)
+	@Test(priority = 27, enabled = false)
 	public void vaidateTC_AG_022() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AG_022");
 		gm.navigateToAudiencePage();
@@ -744,7 +1429,7 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 15, enabled = false)
+	@Test(priority = 28, enabled = false)
 	public void vaidateTC_AG_023() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AG_023");
 		gm.navigateToAudiencePage();
@@ -800,7 +1485,7 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 16, enabled = false)
+	@Test(priority = 29, enabled = false)
 	public void vaidateTC_AG_025() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AG_025");
 		gm.navigateToAudiencePage();
@@ -849,7 +1534,7 @@ public class AudienceTest extends FunctionalTest {
 		Assert.assertEquals(assertmanageaudience, "Manage Audience", "Manage audience page pop is displayed ");
 
 	}
-	@Test(priority = 17, enabled = false)
+	@Test(priority = 30, enabled = false)
 	public void vaidateTC_AG_011() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AG_011");
 		gm.navigateToAudiencePage();
@@ -871,7 +1556,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 18, enabled = false)
+	@Test(priority = 31, enabled = false)
 	public void vaidateTC_AG_013() throws Exception {
 		extentTest = extent.startTest("vaidateTC_AG_013");
 		gm.navigateToAudiencePage();
@@ -925,7 +1610,7 @@ public class AudienceTest extends FunctionalTest {
 			 
 		 }
 		
-	@Test(priority = 19, enabled = true)
+	@Test(priority = 32, enabled = false)
 	public void vaidateTC_AG_014() throws Exception {
 		extentTest = extent.startTest("vaidateTC_AG_014");
 		gm.navigateToAudiencePage();
@@ -938,22 +1623,116 @@ public class AudienceTest extends FunctionalTest {
 		Thread.sleep(3000);
 		gm.click("Xpath", audiencepagelocators.importUsersRadioButton);
 		
-		//gm.click("Xpath", audiencepagelocators.clickUploadButton);
 		Thread.sleep(3000);
 		gm.uploadFile(audiencepagelocators.clickUploadButton, "C:\\Users\\HP\\Desktop\\Book3.xlsx");
-		//Thread.sleep(5000);
 		
 		
 		String errortext=gm.getText("Xpath", audiencepagelocators.invaliFileErrorMsg);
 				
-		//Boolean assertErrormsg=gm.isDisplayed("Xpath", audiencepagelocators.invaliFileErrorMsg);
 		
-		//Assert.assertTrue(assertErrormsg, "error message is displayed on uploading invalid file");
 		
 		Assert.assertEquals(errortext, "File format is invalid. Please correct it and try again");
 		
 	}
-		 
+	
+	 
+	@Test(priority = 33, enabled = false)
+	public void vaidateTC_AG_016() throws Exception {
+		extentTest = extent.startTest("vaidateTC_AG_016");
+		gm.navigateToAudiencePage();
+
+		Thread.sleep(10000);
+		driver.findElement(By.xpath(audiencepagelocators.clickGroupsTab)).click();
+		Thread.sleep(3000);
 		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		Thread.sleep(3000);
+		gm.click("Xpath", audiencepagelocators.importUsersRadioButton);
+		
+		Thread.sleep(3000);
+		gm.uploadFile(audiencepagelocators.clickUploadButton, "C:\\Users\\HP\\Desktop\\duplicatealumni.csv");
+		
+		
+		String errortext=gm.getText("Xpath", audiencepagelocators.duplicateDataErrorMsg);
+				
+		
+		
+		Assert.assertEquals(errortext, "Please remove duplicate email ID");
+		
+	}	
+		 
+	@Test(priority = 34, enabled = false)
+	public void vaidateTC_AG_015() throws Exception {
+		extentTest = extent.startTest("vaidateTC_AG_015");
+		gm.navigateToAudiencePage();
+
+		Thread.sleep(10000);
+		driver.findElement(By.xpath(audiencepagelocators.clickGroupsTab)).click();
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Create New')]")).click();
+		Thread.sleep(5000);
+		
+		gm.click("Xpath", audiencepagelocators.selectUserType);
+
+		gm.click("Xpath", audiencepagelocators.selectStaffUserTypeGroups);
+		
+		gm.click("Xpath", audiencepagelocators.importUsersRadioButton);
+		
+		Thread.sleep(3000);
+		gm.uploadFile(audiencepagelocators.clickUploadButton, "C:\\Users\\HP\\Desktop\\duplicatestaff.csv");
+		
+		
+		String errortext=gm.getText("Xpath", audiencepagelocators.duplicateDataErrorMsg);
+				
+		
+		
+		Assert.assertEquals(errortext, "Please remove duplicate email ID");
+		
+	}
+	
+	@Test(priority = 35, enabled = false)
+	public void vaidateTC_AG_033() throws Exception {
+		extentTest = extent.startTest("vaidateTC_AG_033");
+		gm.navigateToAudiencePage();
+
+		Thread.sleep(10000);
+		driver.findElement(By.xpath(audiencepagelocators.clickGroupsTab)).click();
+		Thread.sleep(3000);
+		
+		List<WebElement>groupmembers=driver.findElements(By.xpath("//div[contains(text(),'Total Audience Count')]//following::span[@class='ng-scope']"));
+		
+		for(int i=0;i<groupmembers.size();i++)
+		{
+			if(!(groupmembers.get(i).getText().equals(0)))
+					{
+				groupmembers.get(i).click();
+				gm.click("Xpath", audiencepagelocators.clickFilterButtonViewUsers);
+				
+				
+				Thread.sleep(10000);
+				String searchusername=driver.findElement(By.xpath("//div[@class='audience-contact-box-detail-name ng-binding ng-scope'][1]")).getText();
+				
+				
+				
+				gm.SendKeys("Xpath", audiencepagelocators.enterNameViewUsers, searchusername);
+				
+				gm.click("Xpath", audiencepagelocators.clickApplyViewUsers);
+				Thread.sleep(5000);
+				//String searchtext=driver.findElement(By.xpath("//div[@class='audience-contact-box-detail-name ng-binding ng-scope'][1]")).getText();
+				
+				Assert.assertTrue(gm.isDisplayed("Xpath", "//div[@class='audience-contact-box-detail-name ng-binding ng-scope'][1]"), "user name matching the search text is displayed");
+				break;
+					}
+		}
+		
+		
+		
+		
+		
+	}
+	
+	
+	
 	}
 
