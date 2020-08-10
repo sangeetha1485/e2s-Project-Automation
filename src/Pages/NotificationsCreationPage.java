@@ -33,7 +33,94 @@ public class NotificationsCreationPage extends FunctionalTest{
 	
 GenericMEthods gm= new 	GenericMEthods();
 	
+
+private static WebElement element =null;
+
+
+
+
+//reusable methods and xpath for Notifications-Page
+
+public class notificationpagelocators extends NotificationsCreationPage
+{
+
+	//Notifications-Page Locators
 	
+			//create notification
+			public static final String selectCategory="//label[contains(text(),'Select Category*')]";
+			public static final String labelTitle="//label[contains(text(),'Enter Title*')]";
+			public static final String clickcreatenotif="//*[@id='page-wrapper']/div[2]/div[2]/div/div/div/div[1]/div/div[2]/button[2]";
+			
+			public static final String labeLockScreenMsg="//label[contains(text(),'Lock Screen Message*')]";
+			public static final String clickNextButton="//button[@id='btnNext']" ;
+			public static final String mandatoryFieldsErrorMsg="//div[contains(text(),'Please fill all mandatory fields')]";
+			public static final String enterTitle="//label[contains(text(),'Enter Title*')]//following::input";
+			
+			
+			public static final String enterLockScreenMsg="//div[contains(text(),'200 characters max')]//preceding::textarea";
+			public static final String titleErrorMsg="//div[contains(text(),'Please enter your title')]";
+			public static final String lockScreenErrorMsg="//div[contains(text(),'Please enter your lock screen message')]";
+			public static final String entercontent="//div[@class='note-editable panel-body']";
+			public static final String errorMsgContent="//div[contains(text(),'Please enter your content')]";
+			
+			public static final String mobilepreviewbutton="//button[contains(text(),'Mobile Preview')]";
+			public static final String lockscreenpreviewbutton="//button[contains(text(),'Lock Screen Preview')]";
+			public static final String createnewcategorybutton="//a[@class='poll-type-create-new-btn']";
+			public static final String mobilepreviewclosebutton="//a[contains(text(),'X')]";
+			public static final String newcategoryname="//label[contains(text(),'Category Name*')]//following::input";
+			public static final String selectimagebutton="//button[contains(text(),'Select Image')]";
+					
+			public static final String addrolesbutton="//a[@class='col-sm-4 poll-category-roles-add text-right ng-scope']";
+			public static final String enterrole="//span[@class='ui-select-match']//following::input[@type='text']";
+			public static final String savenewcategorybutton="//button[@class='ladda-button btn btn-primary']";
+			public static final String categoryddl="//div[@class='dropDownSelect2Popup ui-select-container select2 select2-container ng-valid']";
+			
+			public static final String clicklaterradiobutton="//label[contains(text(),'Later')]//preceding::ins[1]";
+			
+			public static final String clickdate="//input[@id='sDate']";
+			public static final String clickuserttypeddl="//div/div/div/a/span[2]";
+			
+			public static final String enterusertype="//input[@id='ui_select_search_input_user']";
+			public static final String selectallrecepientssoption="//label[contains(text(),'All Recipients')]//preceding::ins[1]";
+			
+			public static final String  totalrecepientscount="//a[@class='ng-binding ng-scope'][1]";
+			
+			public static final String  mobileuserscount="//div[@class='col-sm-12']/table/tbody/tr[2]/td[3]/span/a";
+			
+			public static final String nonmobileuserscount="//div[@class='col-sm-12']/table/tbody/tr[3]/td[3]/span/a";
+			public static final String specificrecepientsoption="//label[contains(text(),'Specific Recipients')]//preceding::ins[1]";
+			
+			public static final String recepientsbutton="//a[@class='btn btn-white btn-sm bottom-10 recipient-btn ng-binding ng-scope']";
+			
+			public static final String recepientssearch="//input[@id='institution_structure_search']";
+			
+			public static final String uploadrecepientstab="//button[contains(text(),'Upload Recipients')]";
+			
+			public static final String uploadcsvfilebutton="//button[@class='btn btn-primary pull-right ng-binding']";
+			
+			public static final String clickcontinuebutton="//button[contains(text(),'Continue')]";
+			
+			public static final String clickinvitebutton="//button[contains(text(),'Invite')]";
+			public static final String clicksummarybutton="//button[contains(text(),'Summary')]";
+			
+			public static final String closerecepientspopup="//div[@class='col-sm-4 right-side-popup-close text-right']/a";
+			
+			public static final String clickpublishbutton="//span[contains(text(),'Publish')]";
+			
+			public static final String entercategoryname="//label[contains(text(),'Category Name*')]//following::input[1]";		
+			
+			public static final String selectmisccategory="//a[contains(text(),'Miscellaneous')]";
+			public static final String removeimage="//button[text()='Remove']";
+
+			public static final String clickfilterbutton="//button[@tooltip='Filter']";
+			public static final String clickstatusddl="//input[@placeholder='Select or search status']";
+			public static final String selectscheduledoption="//div[contains(text(),'Scheduled')]";
+			public static final String clickapplybutton="//button[contains(text(),'Apply')]";
+			public static final String clickfirstnotif="//div/table/tbody/tr[1]/td[1]/a";
+			public static final String onholdhelpicon="//i[@tooltip='Temporarily holds this notification from being published on the scheduled date and time.']";
+			
+			
+}
 //	public void allFieldsMandatoryCheckStep1() throws InterruptedException
 //	{
 //		Thread.sleep(5000);
