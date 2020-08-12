@@ -37,7 +37,7 @@ public class AudienceTest extends FunctionalTest {
 	
 	
 	
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = false)
 	public void vaidateTC_AP_006() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_006");
@@ -68,7 +68,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void vaidateTC_AP_007() throws InterruptedException
 	{
 		gm.navigateToAudiencePage();
@@ -101,7 +101,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public void vaidateTC_AP_010() throws InterruptedException
 	{
 		gm.navigateToAudiencePage();
@@ -139,7 +139,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = false)
 	public void vaidateTC_AP_011() throws InterruptedException
 	{
 		gm.navigateToAudiencePage();
@@ -178,7 +178,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 5, enabled = false)
 	public void vaidateTC_AP_012() throws InterruptedException
 	{
 		gm.navigateToAudiencePage();
@@ -237,7 +237,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 6, enabled = false)
 	public void vaidateTC_AP_013() throws InterruptedException
 	{
 		gm.navigateToAudiencePage();
@@ -325,7 +325,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 7, enabled = false)
 	public void vaidateTC_AP_014() throws InterruptedException
 	{
 		gm.navigateToAudiencePage();
@@ -397,7 +397,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 8, enabled = true)
+	@Test(priority = 8, enabled = false)
 	public void vaidateTC_AP_018() throws InterruptedException
 	{
 		gm.navigateToAudiencePage();
@@ -459,7 +459,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 9, enabled = true)
+	@Test(priority = 9, enabled = false)
 	public void vaidateTC_AP_027() throws InterruptedException
 	{
 		gm.navigateToAudiencePage();
@@ -534,7 +534,7 @@ public class AudienceTest extends FunctionalTest {
 	}
 	
 	
-	@Test(priority = 10, enabled = true)
+	@Test(priority = 10, enabled = false)
 	public void vaidateTC_AP_032() throws InterruptedException
 	{
         gm.navigateToAudiencePage();
@@ -598,7 +598,7 @@ public class AudienceTest extends FunctionalTest {
 	
 	}
 	
-	@Test(priority = 11, enabled = true)
+	@Test(priority = 11, enabled = false)
 	public void vaidateTC_AP_033() throws InterruptedException
 	{
         gm.navigateToAudiencePage();
@@ -652,7 +652,7 @@ public class AudienceTest extends FunctionalTest {
 	
 	}
 	
-	@Test(priority = 12, enabled = true)
+	@Test(priority = 12, enabled = false)
 	public void vaidateTC_AP_034() throws InterruptedException
 	{
         gm.navigateToAudiencePage();
@@ -706,7 +706,7 @@ public class AudienceTest extends FunctionalTest {
 	
 	}
 	
-	@Test(priority = 13, enabled = true)
+	@Test(priority = 13, enabled = false)
 	public void vaidateTC_AP_036() throws InterruptedException
 	{
         gm.navigateToAudiencePage();
@@ -760,7 +760,7 @@ public class AudienceTest extends FunctionalTest {
 	
 	}
 	
-	@Test(priority = 14, enabled = true)
+	@Test(priority = 14, enabled = false)
 	public void validateTC_AP_029() throws InterruptedException {
 
 		extentTest = extent.startTest("validateTC_AP_029");
@@ -887,7 +887,7 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 17, enabled = true)
+	@Test(priority = 17, enabled = false)
 	public void validateTC_AI_073() throws InterruptedException, IOException {
 		extentTest = extent.startTest("validateTC_AI_073");
 		gm.navigateToAudiencePage();
@@ -1130,7 +1130,7 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 23, enabled = false)
+	@Test(priority = 23, enabled = true)
 	public void vaidateTC_AI_091() throws Exception {
 		extentTest = extent.startTest("validateTC_AI_091");
 		gm.navigateToAudiencePage();

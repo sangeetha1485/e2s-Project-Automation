@@ -125,6 +125,12 @@ public class notificationpagelocators extends NotificationsCreationPage
 			
 			public static final String selectrecepients="//*[@id='manulaclick']/table/thead/tr/th[1]/div/ins";
 			
+			public static final String totalusersuploaded="//label[contains(text(),'Total users uploaded')]//following::strong[@class='ng-binding']";
+			
+			public static final String usersfoundwithinsystem="//label[contains(text(),'Users found within the system')]//following::strong[@class='ng-binding']";
+			
+			public static final String usersnotfound="//label[contains(text(),'Users not found')]//following::strong[@class='ng-binding']";
+			
 }
 //	public void allFieldsMandatoryCheckStep1() throws InterruptedException
 //	{

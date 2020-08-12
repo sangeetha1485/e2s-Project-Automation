@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -22,6 +23,8 @@ import Pages.LoginPage;
 import Pages.NotificationsCreationPage;
 import Pages.NotificationsCreationPage.notificationpagelocators;
 import Pages.NotificationsHomePage;
+import utility.Constants;
+import utility.ExcelUtils;
 import utility.GenericMEthods;
 
 
@@ -475,7 +478,7 @@ public class NotificationTest extends FunctionalTest{
 		
 	}
 	
-	@Test(priority = 9, enabled = true)
+	@Test(priority = 9, enabled = false)
 	public void validateTC_N_029() throws InterruptedException, AWTException
 	{
 	
@@ -500,34 +503,151 @@ public class NotificationTest extends FunctionalTest{
 		Thread.sleep(5000);
 		
 		
-		gm.click("Xpath", notificationpagelocators.specificrecepientsoption);
 		
-		gm.click("Xpath", notificationpagelocators.recepientsbutton);
-		
-		Thread.sleep(5000);
 		
 		List<String> list=new ArrayList<String>();  
 		
-		List<WebElement> countcolumnelements = driver.findElements(By.xpath("//table[@class='table margin-bottom-0 table-striped ng-scope']/tbody/tr/td[3]"));
 		
-	
-			
-		
-			System.out.println(countcolumnelements.size());
-			
 
-			for(int l=1;l<=countcolumnelements.size();l++)
+		
+		String[] usertype = {"Staff", "Alumni"};
+		
+		for(int k=0;k<usertype.length;k++)
+		{
+			
+			
+			
+			gm.click("Xpath", notificationpagelocators.specificrecepientsoption);
+			Thread.sleep(3000);
+			
+			gm.click("Xpath", notificationpagelocators.clickuserttypeddl);
+			
+			driver.findElement(By.xpath(notificationpagelocators.enterusertype)).clear();
+			gm.SendKeys("Xpath", notificationpagelocators.enterusertype,usertype[k]);
+			
+	
+			driver.findElement(By.xpath(notificationpagelocators.enterusertype)).sendKeys(Keys.ENTER);
+			Thread.sleep(10000);
+			driver.findElement(By.xpath("//*[@id='clear_filters_confirm']")).click();
+			Thread.sleep(5000);
+			gm.click("Xpath", notificationpagelocators.recepientsbutton);
+			
+			Thread.sleep(3000);
+			gm.click("Xpath", notificationpagelocators.personastab);
+			
+			Thread.sleep(5000);
+			List<WebElement> countcolumnelements = driver.findElements(By.xpath("//table[@class='table margin-bottom-0 table-striped ng-scope']/tbody/tr/td[3]"));
+			
+			List<WebElement> rows=driver.findElements(By.xpath("//table[@class='table margin-bottom-0 table-striped ng-scope']/tbody/tr"));
+			
+				
+			List<WebElement> personaelements = driver.findElements(By.xpath("//table[@class='table margin-bottom-0 table-striped ng-scope']/tbody/tr/td[2]"));
+			
+			List<WebElement> selectpersonaelements = driver.findElements(By.xpath("//table[@class='table margin-bottom-0 table-striped ng-scope']/tbody/tr/td[1]"));
+		
+		
+			for(int i=0;i<=countcolumnelements.size();i++)
 			{
-				//assert.assertEquals(actual, expected);
-				list.add(gm.getText("Xpath", "//table[@class='table margin-bottom-0 table-striped ng-scope']/tbody/tr["+l+"]/td[3]")); 
+				System.out.println("inside for loop");
 				
+				System.out.println(countcolumnelements.get(i).getText());
 				
-				
+				if(!(countcolumnelements.get(i).getText().contains("0")))
+						{
+					
+					System.out.println("inside if loop");
+					//driver.findElement(By.xpath("//table[@class='table margin-bottom-0 table-striped ng-scope']/tbody/tr["+i+"]/td[3]")).click();
+					Thread.sleep(3000);
+					selectpersonaelements.get(i).click();
+					
+					String j= countcolumnelements.get(i).getText();
+					String clickedpersona=personaelements.get(i).getText();
+					System.out.println("clicked persona name is " + personaelements.get(i).getText());
+					
+					gm.click("Xpath", notificationpagelocators.clickinvitebutton);
+					
+					String addedpersona=driver.findElement(By.xpath("//span[@class='ui-select-match-item btn btn-default btn-xs ng-scope']//span[2]")).getText();
+					System.out.println("addedpersona "+ addedpersona);
+					Thread.sleep(5000);
+					
+					if((addedpersona.contains(clickedpersona)) && (addedpersona.contains(j)))
+					{
+						System.out.println("selected persona is added and counts of users are matching");
+						break;
+					}
+					
+					
+						}
 			}
 			
-			System.out.println(list.size());
-			//Assert.assertTrue((list.size()==i), "users list is displayed after clicking on total recpeients count");
+			
 		}
 		
+	}
 	
+	@Test(priority = 10, enabled = true)
+	public void validateTC_N_033() throws Exception
+	{
+	
+		extentTest = extent.startTest("validateTC_N_033");
+		Thread.sleep(5000);
+		
+		gm.navigateToNotificationsHomePage();
+		
+		nhp.clickCreateNotification();
+		
+		gm.SendKeys("Xpath", notificationpagelocators.enterTitle, "notif002");
+		
+		gm.SendKeys("Xpath", notificationpagelocators.enterLockScreenMsg, "test lock screen msg");
+
+		
+		gm.click("Xpath", notificationpagelocators.clickNextButton);
+		
+		gm.SendKeys("Xpath", notificationpagelocators.entercontent, "test content msg");
+		gm.click("Xpath", notificationpagelocators.clickNextButton);
+		
+		gm.click("Xpath", notificationpagelocators.clicklaterradiobutton);
+		Thread.sleep(5000);
+		
+		gm.click("Xpath", notificationpagelocators.specificrecepientsoption);
+		Thread.sleep(3000);
+		
+		gm.click("Xpath", notificationpagelocators.recepientsbutton);
+		
+		Thread.sleep(3000);
+		
+		
+		gm.click("Xpath", notificationpagelocators.uploadrecepientstab);
+		
+		
+		
+		gm.uploadFile( notificationpagelocators.uploadcsvfilebutton, "C:\\Users\\HP\\Desktop\\Book2.csv");
+		
+		ExcelUtils.setExcelFile(Constants.Path_TestData, Constants.File_TestData);
+		Thread.sleep(5000);
+		System.out.println("screen value"+gm.getText("Xpath", notificationpagelocators.totalusersuploaded));
+		
+		System.out.println("excel input" + ExcelUtils.getCellData(1, 1));
+		
+		
+		
+		Assert.assertEquals(gm.getText("Xpath", notificationpagelocators.totalusersuploaded), ExcelUtils.getCellData(1, 5));
+		Assert.assertEquals(gm.getText("Xpath", notificationpagelocators.usersfoundwithinsystem), ExcelUtils.getCellData(1, 6));
+		Assert.assertEquals(gm.getText("Xpath", notificationpagelocators.usersnotfound), ExcelUtils.getCellData(1, 7));
+		//click continue button
+		
+		gm.click("Xpath", notificationpagelocators.clickcontinuebutton);
+		
+		
+		
+		
+		
+		gm.click("Xpath", notificationpagelocators.clickinvitebutton);
+		
+		String invididualusersuploaded=driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/div/div/div[2]/div/div/div[2]/div/span/div[6]/div/div/div/div/span/span/span[2]")).getText();
+
+		
+		Assert.assertEquals(notificationpagelocators.usersfoundwithinsystem,invididualusersuploaded,"users are uploaded from csv");
+		
+	}
 }
