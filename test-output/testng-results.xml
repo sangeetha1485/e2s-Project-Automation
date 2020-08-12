@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="5" total="6" passed="1">
+<testng-results skipped="0" failed="0" ignored="8" total="9" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="70810" started-at="2020-08-10T17:56:19Z" finished-at="2020-08-10T17:57:29Z">
+  <suite name="Suite" duration-ms="73138" started-at="2020-08-11T16:06:23Z" finished-at="2020-08-11T16:07:37Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="70810" started-at="2020-08-10T17:56:19Z" finished-at="2020-08-10T17:57:29Z">
+    <test name="Test" duration-ms="73138" started-at="2020-08-11T16:06:23Z" finished-at="2020-08-11T16:07:37Z">
       <class name="Test.NotificationTest">
-        <test-method status="PASS" signature="setExtent()[pri:0, instance:Test.NotificationTest@55a1c291]" name="setExtent" is-config="true" duration-ms="198" started-at="2020-08-10T17:56:19Z" finished-at="2020-08-10T17:56:19Z">
+        <test-method status="PASS" signature="setExtent()[pri:0, instance:Test.NotificationTest@2145433b]" name="setExtent" is-config="true" duration-ms="189" started-at="2020-08-11T16:06:23Z" finished-at="2020-08-11T16:06:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtent -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Test.NotificationTest@55a1c291]" name="setUp" is-config="true" duration-ms="17613" started-at="2020-08-10T17:56:19Z" finished-at="2020-08-10T17:56:36Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Test.NotificationTest@2145433b]" name="setUp" is-config="true" duration-ms="18032" started-at="2020-08-11T16:06:24Z" finished-at="2020-08-11T16:06:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validateTC_N_017()[pri:6, instance:Test.NotificationTest@55a1c291]" name="validateTC_N_017" duration-ms="51344" started-at="2020-08-10T17:56:36Z" finished-at="2020-08-10T17:57:28Z">
+        <test-method status="PASS" signature="validateTC_N_029()[pri:9, instance:Test.NotificationTest@2145433b]" name="validateTC_N_029" duration-ms="53266" started-at="2020-08-11T16:06:42Z" finished-at="2020-08-11T16:07:35Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateTC_N_017 -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:Test.NotificationTest@55a1c291]" name="tearDown" is-config="true" duration-ms="1039" started-at="2020-08-10T17:57:28Z" finished-at="2020-08-10T17:57:29Z">
+        </test-method> <!-- validateTC_N_029 -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:Test.NotificationTest@2145433b]" name="tearDown" is-config="true" duration-ms="1112" started-at="2020-08-11T16:07:35Z" finished-at="2020-08-11T16:07:36Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=validateTC_N_017 status=SUCCESS method=NotificationTest.validateTC_N_017()[pri:6, instance:Test.NotificationTest@55a1c291] output={null}]]]>
+                <![CDATA[[TestResult name=validateTC_N_029 status=SUCCESS method=NotificationTest.validateTC_N_029()[pri:9, instance:Test.NotificationTest@2145433b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:Test.NotificationTest@55a1c291]" name="endReport" is-config="true" duration-ms="591" started-at="2020-08-10T17:57:29Z" finished-at="2020-08-10T17:57:29Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:Test.NotificationTest@2145433b]" name="endReport" is-config="true" duration-ms="512" started-at="2020-08-11T16:07:36Z" finished-at="2020-08-11T16:07:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->

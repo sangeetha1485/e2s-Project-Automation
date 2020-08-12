@@ -108,3 +108,6 @@
 [0810/202232.117:ERROR:prune_crash_reports.cc(35)] PruneCrashReportDatabase: Failed to get pending reports
 [0810/211727.563:ERROR:file_io_win.cc(179)] CreateFile C:\Users\HP\AppData\Local\Temp\scoped_dir16056_22361\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
 [0810/225505.324:ERROR:file_io_win.cc(179)] CreateFile C:\Users\HP\AppData\Local\Temp\scoped_dir21944_9891\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
+[0811/201650.072:ERROR:file_io_win.cc(179)] CreateFile C:\Users\HP\AppData\Local\Temp\scoped_dir22708_19729\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
+[0811/202319.281:ERROR:file_io_win.cc(179)] CreateFile C:\Users\HP\AppData\Local\Temp\scoped_dir19160_31892\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
+[0811/203900.111:ERROR:file_io_win.cc(179)] CreateFile C:\Users\HP\AppData\Local\Temp\scoped_dir19848_24730\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)

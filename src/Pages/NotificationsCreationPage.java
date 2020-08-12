@@ -94,6 +94,10 @@ public class notificationpagelocators extends NotificationsCreationPage
 			
 			public static final String recepientssearch="//input[@id='institution_structure_search']";
 			
+			public static final String personastab="//button[contains(text(),'Personas')]";
+			public static final String groupsstab="//button[contains(text(),'Groups')]";
+			public static final String individualsstab="//button[contains(text(),'Individuals')]";
+			
 			public static final String uploadrecepientstab="//button[contains(text(),'Upload Recipients')]";
 			
 			public static final String uploadcsvfilebutton="//button[@class='btn btn-primary pull-right ng-binding']";
@@ -119,6 +123,7 @@ public class notificationpagelocators extends NotificationsCreationPage
 			public static final String clickfirstnotif="//div/table/tbody/tr[1]/td[1]/a";
 			public static final String onholdhelpicon="//i[@tooltip='Temporarily holds this notification from being published on the scheduled date and time.']";
 			
+			public static final String selectrecepients="//*[@id='manulaclick']/table/thead/tr/th[1]/div/ins";
 			
 }
 //	public void allFieldsMandatoryCheckStep1() throws InterruptedException

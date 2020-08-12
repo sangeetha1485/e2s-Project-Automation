@@ -145,7 +145,7 @@ public class GenericMEthods extends FunctionalTest {
 
 		for (int i = 0; i < tableLinks.size(); i++) {
 			if (tableLinks.get(i).getText().contains(attribute))
-				;
+				
 			{
 				System.out.println("added attribute is displayed in grid");
 				return true;

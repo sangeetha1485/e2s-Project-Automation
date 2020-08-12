@@ -8,9 +8,9 @@
     <classes>
       <class name="Test.NotificationTest">
         <methods>
+          <include name="validateTC_N_029"/>
           <include name="setExtent"/>
           <include name="setUp"/>
-          <include name="validateTC_N_017"/>
           <include name="tearDown"/>
           <include name="endReport"/>
         </methods>
