@@ -29,14 +29,107 @@ import utility.GenericMEthods;
 public class CampusNews extends FunctionalTest{
 	
 	GenericMEthods gm = new GenericMEthods();
-//	   @FindBy(how = How.XPATH, using = "")
-//	   private WebElement filterButton;
-//	   
 
 	
+	public class CampusNewslocators extends AudiencePage
+	{
 	
-	
-	
+		//campus news categories page locators
+		
+		
+		public static final String misccategoryname="//a[contains(text(),'Miscellaneous')] ";
+		
+		public static final String searchbycategory="//input[@id='institution_structure_search'";
+		public static final String createnewsbutton="//button[@class='btn btn-primary btn-sm ng-binding ng-scope']";
+		
+		
+		//miscellaneous category locators
+		public static final String clickfilterbutton="//button[@class='btn btn-white btn-sm']";
+		public static final String selectstatus="//input[@placeholder='Select or search status']";
+		
+		public static final String selectactive="//div[contains(text(),'Active')]";
+		
+		public static final String selectscheduled="//div[contains(text(),'Scheduled')]";
+		public static final String selectonhold="//div[contains(text(),'On Hold')]";
+		public static final String selectinactive="//div[contains(text(),'Inactive')]";
+		public static final String selectexpired="//div[contains(text(),'Expired')]";
+		
+		public static final String clickpublishdate="//input[@id='startdate']";
+		
+		public static final String clearbutton="//button[contains(text(),'Clear')]";
+		public static final String applybutton="//button[contains(text(),'Apply')]";
+		public static final String createnews="//*[@id='page-wrapper']/div[2]/div[2]/div/div/div/div/div[1]/div/div[2]/div/div/div[1]/form/div/div/a";
+		public static final String clickfirstnews="//div/table/tbody/tr[1]/td[1]/a";
+		public static final String statusoffirstnews="//*[@id='page-wrapper']/div[2]/div[2]/div/div/div/div/div[2]/div/div/div[1]/table/tbody/tr[1]/td[2]";
+		
+		
+		//create campus news page
+		
+		public static final String catgoryname="//span[@class='select2-chosen']//span[contains(text(),'Miscellaneous')]";
+		
+		//create new category
+		public static final String clickcreatenewcategory="//span[@tooltip='Create Category']";
+		public static final String categoryname="//label[contains(text(),'Category Name*')]//following::input";
+		public static final String enterdesc="//label[contains(text(),'Description')]//following::textarea";
+		public static final String enabelerssfield="//span[@id='switchery_id']";
+		public static final String clickselectimagebutton="//button[@class='btn btn-primary btn-sm ng-binding']";
+		
+		public static final String clickremove="//button[contains(text(),'Remove')]";
+		public static final String clicksave="//span[contains(text(),' Save')]";
+		public static final String clickpermissionsettings="//*[@id='ng-app']/body/div[15]/div/div/div/div/div[2]/div/div[5]/div/a";
+		public static final String enterrole="//input[@placeholder='Select or search role']";
+		
+		//step1 
+		public static final String entertitle="//input[@placeholder='Your title goes here']";
+		
+		public static final String lockscreenmsg="//textarea[@placeholder='Your message goes here']";
+		public static final String clicknextbutton="//button[@id='btnNext']";
+		
+		//step2
+		public static final String  entercontentmsg="//div[@class='note-editable panel-body']";
+		
+		//step3
+		public static final String clicklateroption="//label[contains(text(),'Later')]//preceding::ins[1]";
+		
+		public static final String pubishstartdate="//div[@class='input-group date'][1]//input[@id='startDate1']";
+		public static final String expirydate="//div[@class='input-group date'][1]//input[@id='expiryDate1']";
+		public static final String availablepublicly="//span[@class='switchery switchery-default']";
+		public static final String usertypeddl="//div/div/div/a/span[2]";
+		public static final String enterusertype="//input[@id='ui_select_search_input_user']";
+		
+		public static final String confirmpopup="//button[contains(text(),'Confirm')]";
+		public static final String specificrecepientsoption="//label[contains(text(),'Specific Recipients')]//preceding::ins[1]";
+		
+		public static final String recepientsbutton="//*[@id='page-wrapper']/div[2]/div[2]/div/div/div/div/div/div[2]/div/span/div[4]/div/a";
+		public static final String clickpublishbutton="//span[contains(text(),'Publish')]";
+		public static final String clicksummarybutton="//button[contains(text(),'Summary')]";
+		
+		//recepients popup
+		public static final String personastab="//button[contains(text(),'Personas')]";
+		public static final String groupsstab="//button[contains(text(),'Groups')]";
+		public static final String individualsstab="//button[contains(text(),'Individuals')]";
+		
+		public static final String uploadrecepientstab="//button[contains(text(),'Upload Recipients')]";
+		
+		public static final String uploadcsvfilebutton="//button[@class='btn btn-primary pull-right ng-binding']";
+		
+		public static final String clickcontinuebutton="//button[contains(text(),'Continue')]";
+		
+		public static final String clickinvitebutton="//button[contains(text(),'Invite')]";
+		
+		
+		public static final String closerecepientspopup="//div[@class='col-sm-4 right-side-popup-close text-right']/a";
+		
+		
+		public static final String selectrecepients="//*[@id='manulaclick']/table/thead/tr/th[1]/div/ins";
+		
+		public static final String totalusersuploaded="//label[contains(text(),'Total users uploaded')]//following::strong[@class='ng-binding']";
+		
+		public static final String usersfoundwithinsystem="//label[contains(text(),'Users found within the system')]//following::strong[@class='ng-binding']";
+		
+		public static final String usersnotfound="//label[contains(text(),'Users not found')]//following::strong[@class='ng-binding']";
+		
+	}
 	public void validateEQ2658() throws InterruptedException, AWTException
 	{
 		Thread.sleep(5000);

@@ -8,7 +8,7 @@
     <classes>
       <class name="Test.NotificationTest">
         <methods>
-          <include name="validateTC_N_033"/>
+          <include name="validateTC_N_046"/>
           <include name="setExtent"/>
           <include name="setUp"/>
           <include name="tearDown"/>

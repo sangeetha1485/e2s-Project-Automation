@@ -15,6 +15,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.yaml.snakeyaml.scanner.Constant;
 import org.apache.poi.ss.usermodel.Row.MissingCellPolicy;
@@ -27,7 +28,7 @@ public class ExcelUtils {
 
 	private static HSSFWorkbook ExcelWBook;
 
-	private static HSSFCell Cell;
+	public static HSSFCell Cell;
 
 	private static HSSFRow Row;
 	private static MissingCellPolicy xRow;
@@ -60,7 +61,7 @@ public class ExcelUtils {
 	// This method is to read the test data from the Excel cell, in this we are
 	// passing parameters as Row num and Col num
 
-	public static String getCellData(int RowNum, int ColNum) throws Exception {
+	public static String getCellData1(int RowNum, int ColNum) throws Exception {
 
 		try {
 
@@ -82,64 +83,71 @@ public class ExcelUtils {
 	   
 
 	    // for creating .xlsx workbook
-	    public void readExcel(String filePath,String fileName,String sheetName) throws IOException{
+	    public static String getCellData(int RowNum, int ColNum) throws IOException{
 
 	        //Create an object of File class to open xlsx file
 
-	        File file =    new File(filePath+"\\"+fileName);
+	       // File file =    new File(filePath+"\\"+fileName);
 
 	        //Create an object of FileInputStream class to read excel file
 
-	        FileInputStream inputStream = new FileInputStream(file);
+	        //FileInputStream inputStream = new FileInputStream(file);
+	    	DataFormatter fmt = new DataFormatter();
 	        
-	        
-	        Workbook wbk=null;
+	    	try {
 	        
 	        
 	        // prints the substring after index 5
 
-	        String fileextension= fileName.substring(fileName.indexOf("."));
+	       // String fileextension= fileName.substring(fileName.indexOf("."));
 	        
-	        if(fileextension.contains(".xls"))
-	        {
-	        	wbk= new HSSFWorkbook(inputStream);
-	        }
+//	        if(fileextension.contains(".xls"))
+//	        {
+//	        	wbk= new HSSFWorkbook(inputStream);
+//	        }
+//	        
+//	        else if(fileextension.contains(".xlsx")) {
+//	        	wbk= new XSSFWorkbook(inputStream);
+//
+//	        }
+//	        
+//	        String data;
+//	        Sheet sheet1= wbk.getSheet(sheetName);
 	        
-	        else if(fileextension.contains(".xlsx")) {
-	        	wbk= new XSSFWorkbook(inputStream);
+	        Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
 
-	        }
-	        
-	        String data;
-	        Sheet sheet1= wbk.getSheet(sheetName);
-	        
-	        for(Row row : sheet1)
-	        {
-	        	for(Cell cell : row)
-	        	{
-	        		if(cell.getCellType()==CellType.STRING)
+			String CellData = null ;
+			
+	        		if(Cell.getCellType()==CellType.STRING)
 	        		{
-	        			data=cell.getStringCellValue();
-	        			System.out.print(data);
+	        			CellData=Cell.getStringCellValue();
+	        			
+	        			System.out.print(CellData);
+	        			return CellData;
 	        		}
 	        		
-	        		else if(cell.getCellType()==CellType.NUMERIC)
+	        		else if(Cell.getCellType()==CellType.NUMERIC)
 	        		{
 	        			
 	        			//The java string valueOf() method converts different types of values into string. 
 	        			//By the help of string valueOf() method, you can convert int to string, long to string, boolean to string, 
 	        			//character to string, float to string, double to string, object to string and char array to string.
-
-
-	        			data=String.valueOf(cell.getNumericCellValue());
-	        			System.out.print(data);
+	        			
+	        			
+	        			CellData=String.valueOf((int) Cell.getNumericCellValue());
+	        			System.out.print(CellData);
+	        			return CellData;
 	        		}
-	        	}
-	        	
-	        	System.out.println();
-	        }
+	    	} catch (Exception e) {
 
-	           } 
+				return "";
+
+			}
+			return null;
+	        	
+	    }    
+
+	           
 
 	
 	// This method is to write in the Excel cell, Row num and Col num are the

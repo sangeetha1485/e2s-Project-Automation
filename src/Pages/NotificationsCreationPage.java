@@ -53,6 +53,8 @@ public class notificationpagelocators extends NotificationsCreationPage
 			
 			public static final String labeLockScreenMsg="//label[contains(text(),'Lock Screen Message*')]";
 			public static final String clickNextButton="//button[@id='btnNext']" ;
+			
+			public static final String clickPreviousButton="//button[contains(text(),'Previous')]";
 			public static final String mandatoryFieldsErrorMsg="//div[contains(text(),'Please fill all mandatory fields')]";
 			public static final String enterTitle="//label[contains(text(),'Enter Title*')]//following::input";
 			
@@ -116,10 +118,16 @@ public class notificationpagelocators extends NotificationsCreationPage
 			public static final String selectmisccategory="//a[contains(text(),'Miscellaneous')]";
 			public static final String removeimage="//button[text()='Remove']";
 
-			public static final String clickfilterbutton="//button[@tooltip='Filter']";
+			//xpath for filter-categories 
+			public static final String clickfilterbutton="//*[@id='page-wrapper']/div[2]/div[2]/div/div/div/div/div[1]/div/div[2]/div/div/div[2]/button";
 			public static final String clickstatusddl="//input[@placeholder='Select or search status']";
+			
 			public static final String selectscheduledoption="//div[contains(text(),'Scheduled')]";
+			public static final String selectcompletedoption="//div[contains(text(),'Completed')]";
+			public static final String selectonholdoption="//div[contains(text(),'On Hold')]";
+			
 			public static final String clickapplybutton="//button[contains(text(),'Apply')]";
+			
 			public static final String clickfirstnotif="//div/table/tbody/tr[1]/td[1]/a";
 			public static final String onholdhelpicon="//i[@tooltip='Temporarily holds this notification from being published on the scheduled date and time.']";
 			
@@ -130,6 +138,9 @@ public class notificationpagelocators extends NotificationsCreationPage
 			public static final String usersfoundwithinsystem="//label[contains(text(),'Users found within the system')]//following::strong[@class='ng-binding']";
 			
 			public static final String usersnotfound="//label[contains(text(),'Users not found')]//following::strong[@class='ng-binding']";
+
+			public static final String deletenototification="//button[contains(text(),'Delete')]";
+			
 			
 }
 //	public void allFieldsMandatoryCheckStep1() throws InterruptedException
@@ -466,7 +477,7 @@ public class notificationpagelocators extends NotificationsCreationPage
 		
 		driver.findElement(By.xpath("//td[@data-date='+todaydate+' and @data-month='4']/div")).click();
 		
-		
+		driver.findElement(By.xpath("//input[@id='sDate']")).click();
 	
 		//driver.findElement(By.xpath("//*[@id='ng-app']/body/div[7]/div[1]/div[2]/table/tbody/tr[5]/td[5]")).click();
 
