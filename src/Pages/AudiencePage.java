@@ -54,6 +54,7 @@ WebDriver driver;
 		
 		public static final String createpersonaButton="//button[contains(text(),'Cancel')]//following::button";
 		public static final String selectSeatNumber="//div[contains(text(),'seat number')]";
+		public static final String selectsearchoperator="//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[6]/div[2]/div[1]/div[2]/div/div/a/span[2]";
 		
 		public static final String selectGreaterThanOrEqual="//div[contains(text(),'Greater than Or Equal')]";
 		
@@ -195,6 +196,8 @@ WebDriver driver;
 	
 	public void test2729() throws InterruptedException
 	{
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		
 		Thread.sleep(4000);
@@ -216,6 +219,8 @@ WebDriver driver;
 	
 	public  void validateCreateAttributeSuccessmsg() throws InterruptedException
 	{
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		
 	
@@ -282,6 +287,8 @@ WebDriver driver;
 	
 	public void vaidateTC_AI_005() throws InterruptedException
 	{
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		 gm.navigateToAudiencePage();
 		 
 		//*[@id="page-wrapper"]/div[2]/div[2]/div[1]/div[1]/div[3]/button
@@ -315,6 +322,8 @@ WebDriver driver;
 	
 	public void vaidateTC_AI_020() throws InterruptedException
 	{
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		 gm.navigateToAudiencePage();
 		 
 		
@@ -342,6 +351,8 @@ WebDriver driver;
 	
 	public void validateTC_AI_030() throws InterruptedException
 	{
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		 gm.navigateToAudiencePage();
 		 
 		
@@ -421,6 +432,8 @@ WebDriver driver;
 	
 	public void validateTC_AI_033() throws InterruptedException
 	{
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		 gm.navigateToAudiencePage();
 		 
 		
@@ -463,6 +476,8 @@ WebDriver driver;
 	
 	public void validateTC_AI_066() throws InterruptedException
 	{
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		 gm.navigateToAudiencePage();
 		 
 		
@@ -510,6 +525,8 @@ WebDriver driver;
 	
 	public void vaidateCreateGroups() throws InterruptedException
 	{
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -564,6 +581,8 @@ WebDriver driver;
 	
 	public void validateAlertMsgInvalidMobile() throws InterruptedException
 	{
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);

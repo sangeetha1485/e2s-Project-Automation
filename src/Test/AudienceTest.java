@@ -41,6 +41,8 @@ public class AudienceTest extends FunctionalTest {
 	public void vaidateTC_AP_006() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_006");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -71,6 +73,9 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 2, enabled = false)
 	public void vaidateTC_AP_007() throws InterruptedException
 	{
+		extentTest = extent.startTest("vaidateTC_AP_007");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -104,6 +109,9 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 3, enabled = false)
 	public void vaidateTC_AP_010() throws InterruptedException
 	{
+		extentTest = extent.startTest("vaidateTC_AP_010");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -117,10 +125,12 @@ public class AudienceTest extends FunctionalTest {
 		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys("test");
 		
 		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
-		
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//div[contains(text(),'Graduation Year')]")).click();
 		
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
+		
 		
 		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
 		
@@ -142,6 +152,9 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 4, enabled = false)
 	public void vaidateTC_AP_011() throws InterruptedException
 	{
+		extentTest = extent.startTest("vaidateTC_AP_011");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -155,14 +168,14 @@ public class AudienceTest extends FunctionalTest {
 		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys("test");
 		
 		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
-		
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
 		
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
 		
-		driver.findElement(By.xpath("//input[@placeholder='Value']")).sendKeys("12");
+		
 		
 		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
 		Thread.sleep(2000);
@@ -181,6 +194,9 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 5, enabled = false)
 	public void vaidateTC_AP_012() throws InterruptedException
 	{
+		extentTest = extent.startTest("vaidateTC_AP_012");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -198,8 +214,8 @@ public class AudienceTest extends FunctionalTest {
 		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
 		
 		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
-		
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		Thread.sleep(5000);
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
 		
@@ -210,7 +226,7 @@ public class AudienceTest extends FunctionalTest {
 		
 		driver.findElement(By.xpath("//input[@placeholder='Value']")).sendKeys("12");
 		
-		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys(Keys.ENTER);
+		
 		
 		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
 		Thread.sleep(3000);
@@ -240,6 +256,9 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 6, enabled = false)
 	public void vaidateTC_AP_013() throws InterruptedException
 	{
+		extentTest = extent.startTest("vaidateTC_AP_013");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -259,19 +278,19 @@ public class AudienceTest extends FunctionalTest {
 		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
 		
 		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
-		
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		Thread.sleep(5000);
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
 		
 		Thread.sleep(3000);
 		
 		
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search value')]")).click();
+		//driver.findElement(By.xpath("//span[contains(text(),'Select or search value')]")).click();
 		
-		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys("12");
+		driver.findElement(By.xpath("//input[@placeholder='Value']")).click();
 		
-		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath("//input[@placeholder='Value']")).sendKeys("12");
 		
 		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
 		Thread.sleep(3000);
@@ -282,19 +301,19 @@ public class AudienceTest extends FunctionalTest {
 		
 		driver.findElement(By.xpath("//div[contains(text(),'Program')]")).click();
 		
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
 		
 		Thread.sleep(3000);
 		
 		
-		//driver.findElement(By.xpath("//span[contains(text(),'Select or search value')]")).click();
+		driver.findElement(By.xpath("//span[contains(text(),'Select or search value')]")).click();
 		
 		
 		driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input")).sendKeys("Medical Biotechnology");
-		
-		//driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input")).sendKeys(Keys.ENTER);
+		//
 		
 		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
 		Thread.sleep(3000);
@@ -328,6 +347,9 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 7, enabled = false)
 	public void vaidateTC_AP_014() throws InterruptedException
 	{
+		extentTest = extent.startTest("vaidateTC_AP_014");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -349,8 +371,8 @@ public class AudienceTest extends FunctionalTest {
 		Thread.sleep(4000);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
-		
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		Thread.sleep(2000);
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
 		
@@ -400,6 +422,9 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 8, enabled = false)
 	public void vaidateTC_AP_018() throws InterruptedException
 	{
+		extentTest = extent.startTest("vaidateTC_AP_018");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -421,8 +446,8 @@ public class AudienceTest extends FunctionalTest {
 		Thread.sleep(4000);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
-		
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		Thread.sleep(2000);
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
 		
@@ -462,6 +487,9 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 9, enabled = false)
 	public void vaidateTC_AP_027() throws InterruptedException
 	{
+		extentTest = extent.startTest("vaidateTC_AP_027");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -537,6 +565,9 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 10, enabled = false)
 	public void vaidateTC_AP_032() throws InterruptedException
 	{
+		extentTest = extent.startTest("vaidateTC_AP_032");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
         gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -558,8 +589,8 @@ public class AudienceTest extends FunctionalTest {
 		Thread.sleep(4000);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
-		
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		Thread.sleep(2000);
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
 		
@@ -601,6 +632,9 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 11, enabled = false)
 	public void vaidateTC_AP_033() throws InterruptedException
 	{
+		extentTest = extent.startTest("vaidateTC_AP_033");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
         gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -622,8 +656,8 @@ public class AudienceTest extends FunctionalTest {
 		Thread.sleep(4000);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
-		
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		Thread.sleep(2000);
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'Not Equals')]")).click();
 		
@@ -655,6 +689,9 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 12, enabled = false)
 	public void vaidateTC_AP_034() throws InterruptedException
 	{
+		extentTest = extent.startTest("vaidateTC_AP_034");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
         gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -676,10 +713,10 @@ public class AudienceTest extends FunctionalTest {
 		Thread.sleep(4000);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
+		Thread.sleep(2000);
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 		
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
-		
-		driver.findElement(By.xpath("//div[contains(text(),'Greater than Or Equal')]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Greater Than or Equal')]")).click();
 		
 		Thread.sleep(3000);
 		
@@ -709,6 +746,9 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 13, enabled = false)
 	public void vaidateTC_AP_036() throws InterruptedException
 	{
+		extentTest = extent.startTest("vaidateTC_AP_036");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
         gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -730,10 +770,10 @@ public class AudienceTest extends FunctionalTest {
 		Thread.sleep(4000);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
+		Thread.sleep(2000);
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 		
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
-		
-		driver.findElement(By.xpath("//div[contains(text(),'Greater than')]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Greater Than')]")).click();
 		
 		Thread.sleep(3000);
 		
@@ -764,6 +804,8 @@ public class AudienceTest extends FunctionalTest {
 	public void validateTC_AP_029() throws InterruptedException {
 
 		extentTest = extent.startTest("validateTC_AP_029");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		Thread.sleep(5000);
 		gm.click("Xpath", audiencepagelocators.createnewbutton);
@@ -805,15 +847,23 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 15, enabled = false)
+	@Test(priority = 15, enabled = true)
 	public void validateTC_AI_074() throws InterruptedException, IOException {
 		extentTest = extent.startTest("validateTC_AI_074");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		Thread.sleep(5000);
 
 		gm.click("Xpath", audiencepagelocators.clickIndividualsTab);
+		
+		gm.click("Xpath", audiencepagelocators.clickStaffUserTypeOption);
 
+		gm.click("Xpath", audiencepagelocators.selectStaffUserTypeOption);
+		
 		gm.click("Xpath", audiencepagelocators.clickImportButton);
+
+		Thread.sleep(5000);
 
 		gm.click("Xpath", audiencepagelocators.clickUploadCSV);
 
@@ -824,7 +874,7 @@ public class AudienceTest extends FunctionalTest {
 		Thread.sleep(5000);
 
 		String home = System.getProperty("user.home");
-		File file = new File(home + "/Downloads/" + "Alumni" + ".csv");
+		File file = new File(home + "/Downloads/" + "Staff" + ".csv");
 
 		Boolean isfileDeleted = gm.deleteFile(file);
 
@@ -832,13 +882,15 @@ public class AudienceTest extends FunctionalTest {
 
 		System.out.println(LatestFile.getName());
 
-		Assert.assertTrue(LatestFile.getName().contains("alumni"), "Alumni template is downloaded");
+		Assert.assertTrue(LatestFile.getName().contains("staff"), "staff template is downloaded");
 
 	}
 
-	@Test(priority = 16, enabled = false)
-	public void validateTC_AI_064() throws InterruptedException, IOException {
+	@Test(priority = 16, enabled = true)
+	public void validateTC_AI_064() throws Exception {
 		extentTest = extent.startTest("validateTC_AI_064");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		Thread.sleep(5000);
 
@@ -854,9 +906,14 @@ public class AudienceTest extends FunctionalTest {
 
 		gm.click("Xpath", audiencepagelocators.selectGroupDDL);
 		Thread.sleep(3000);
+		
+		
+		
 		gm.click("Xpath", audiencepagelocators.selectGroupName);
 
-		gm.SendKeys("Xpath", audiencepagelocators.enterFieldName, "Music");
+		ExcelUtils.setExcelFile(Constants.Path_TestData, Constants.File_TestData);
+		Thread.sleep(3000);
+		gm.SendKeys("Xpath", audiencepagelocators.enterFieldName, ExcelUtils.getCellData(1, 12));
 
 		gm.click("Xpath", audiencepagelocators.enterFieldType);
 
@@ -873,13 +930,13 @@ public class AudienceTest extends FunctionalTest {
 		gm.click("Xpath", audiencepagelocators.clickAddAttributeButton);
 
 		Boolean verifyattributeadded = gm.verifyElementCustomAttributeTable(audiencepagelocators.attributeTable,
-				"Music");
+				ExcelUtils.getCellData(1, 12));
 
 		Assert.assertTrue(verifyattributeadded, "attribute is added to attribute table");
 
 		gm.click("Xpath", audiencepagelocators.clickCreateAndContinue);
 
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		Boolean attributesadded = driver.findElement(By.xpath(audiencepagelocators.attributeCreatedSuccessMsg))
 				.isDisplayed();
 
@@ -887,9 +944,11 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 17, enabled = false)
+	@Test(priority = 17, enabled = true)
 	public void validateTC_AI_073() throws InterruptedException, IOException {
 		extentTest = extent.startTest("validateTC_AI_073");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		Thread.sleep(5000);
 
@@ -919,9 +978,11 @@ public class AudienceTest extends FunctionalTest {
 		}
 	}
 
-	@Test(priority = 18, enabled = false)
+	@Test(priority = 18, enabled = true)
 	public void validateTC_AI_086() throws InterruptedException, IOException {
 		extentTest = extent.startTest("validateTC_AI_086");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		Thread.sleep(5000);
 
@@ -941,9 +1002,11 @@ public class AudienceTest extends FunctionalTest {
 		Assert.assertTrue(individualspagedisplayed, "On clicking cancel,Individuals home page is displayed");
 	}
 
-	@Test(priority = 19, enabled = false)
+	@Test(priority = 19, enabled = true)
 	public void validateTC_AI_087() throws Exception {
 		extentTest = extent.startTest("validateTC_AI_087");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 		Thread.sleep(5000);
 
@@ -1002,54 +1065,59 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 20, enabled = false)
-	public void validateTC_AI_066() throws InterruptedException {
-		extentTest = extent.startTest("validateTC_AI_066");
+//	@Test(priority = 20, enabled = true)
+//	public void validateTC_AI_066() throws Exception {
+//		extentTest = extent.startTest("validateTC_AI_066");
+//		Thread.sleep(5000);
+//		gm.Wait("//*[@id='top_navigation_heading']");
+//		gm.navigateToAudiencePage();
+//
+//		Thread.sleep(5000);
+//
+//		// driver.findElement(By.xpath(audiencepagelocators.clickIndividualsTab)).click();
+//		gm.click("Xpath", audiencepagelocators.clickIndividualsTab);
+//
+//		gm.click("Xpath", audiencepagelocators.clickStaffUserTypeOption);
+//
+//		gm.click("Xpath", audiencepagelocators.selectStaffUserTypeOption);
+//
+//		Thread.sleep(5000);
+//		// clicking on custom attributes button
+//		driver.findElement(By.xpath("//button[@class='btn btn-white btn-sm ng-scope'][2]")).click();
+//
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath("//a[@class='poll-type-create-new-btn']")).click();
+//
+//		ExcelUtils.setExcelFile(Constants.Path_TestData, Constants.File_TestData);
+//		
+//		driver.findElement(By.xpath("//input[@placeholder='Group name']")).sendKeys(ExcelUtils.getCellData(1, 10));
+//
+//		// clicking on create group button
+//		List<WebElement> buttons = driver
+//				.findElements(By.xpath("//button[@class='ladda-button btn btn-primary ng-binding ng-scope']"));
+//		buttons.get(2).click();
+//
+//		Thread.sleep(5000);
+//
+//		Boolean groupcreatedsuccessmsg = driver
+//				.findElement(By.xpath("//div[contains(text(),'Group created successfully')]")).isDisplayed();
+//
+//		Assert.assertTrue(groupcreatedsuccessmsg, "Success message is displayed after creating group");
+//
+//		WebElement element = driver.findElement(By.xpath("//span[contains(text(),'Select or search group name')]"));
+//
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+//
+//		Boolean groupcreated = driver.findElement(By.xpath("//span[contains(text(),'Academics Group')]")).isDisplayed();
+//
+//		Assert.assertTrue(groupcreated, "Created group is displayed in dropdown");
+//	}
 
-		gm.navigateToAudiencePage();
-
-		Thread.sleep(5000);
-
-		// driver.findElement(By.xpath(audiencepagelocators.clickIndividualsTab)).click();
-		gm.click("Xpath", audiencepagelocators.clickIndividualsTab);
-
-		gm.click("Xpath", audiencepagelocators.clickStaffUserTypeOption);
-
-		gm.click("Xpath", audiencepagelocators.selectStaffUserTypeOption);
-
-		Thread.sleep(5000);
-		// clicking on custom attributes button
-		driver.findElement(By.xpath("//button[@class='btn btn-white btn-sm ng-scope'][2]")).click();
-
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//a[@class='poll-type-create-new-btn']")).click();
-
-		driver.findElement(By.xpath("//input[@placeholder='Group name']")).sendKeys("Academics Group");
-
-		// clicking on create group button
-		List<WebElement> buttons = driver
-				.findElements(By.xpath("//button[@class='ladda-button btn btn-primary ng-binding ng-scope']"));
-		buttons.get(2).click();
-
-		Thread.sleep(5000);
-
-		Boolean groupcreatedsuccessmsg = driver
-				.findElement(By.xpath("//div[contains(text(),'Group created successfully')]")).isDisplayed();
-
-		Assert.assertTrue(groupcreatedsuccessmsg, "Success message is displayed after creating group");
-
-		WebElement element = driver.findElement(By.xpath("//span[contains(text(),'Select or search group name')]"));
-
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
-
-		Boolean groupcreated = driver.findElement(By.xpath("//span[contains(text(),'Academics Group')]")).isDisplayed();
-
-		Assert.assertTrue(groupcreated, "Created group is displayed in dropdown");
-	}
-
-	@Test(priority = 21, enabled = false)
+	@Test(priority = 21, enabled = true)
 	public void vaidateTC_AI_051() throws InterruptedException {
 		extentTest = extent.startTest("validateTC_AI_051");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(5000);
@@ -1081,9 +1149,11 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 22, enabled = false)
+	@Test(priority = 22, enabled = true)
 	public void vaidateTC_AI_089() throws Exception {
 		extentTest = extent.startTest("validateTC_AI_089");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(5000);
@@ -1133,6 +1203,8 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 23, enabled = true)
 	public void vaidateTC_AI_091() throws Exception {
 		extentTest = extent.startTest("validateTC_AI_091");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(5000);
@@ -1185,9 +1257,11 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 24, enabled = false)
+	@Test(priority = 24, enabled = true)
 	public void vaidateTC_AI_020() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AI_020");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(5000);
@@ -1216,6 +1290,8 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 25, enabled = false)
 	public void vaidateTC_AG_008() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AG_008");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(5000);
@@ -1283,6 +1359,8 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 26, enabled = false)
 	public void validateTC_AG_021() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AG_021");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(5000);
@@ -1308,7 +1386,7 @@ public class AudienceTest extends FunctionalTest {
 
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 
 		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
 
@@ -1320,8 +1398,9 @@ public class AudienceTest extends FunctionalTest {
 
 		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys(Keys.ENTER);
 
+
 		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		Boolean attributePresent = driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr/td[1]"))
 				.isDisplayed();
@@ -1341,6 +1420,8 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 27, enabled = false)
 	public void vaidateTC_AG_022() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AG_022");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(10000);
@@ -1363,12 +1444,12 @@ public class AudienceTest extends FunctionalTest {
 		// entering first rule
 
 		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
-
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[contains(text(),'Program')]")).click();
 
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 
 		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
 
@@ -1381,16 +1462,16 @@ public class AudienceTest extends FunctionalTest {
 		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys(Keys.ENTER);
 
 		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		// entering second rule
 		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
 
 		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
 
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 
-		driver.findElement(By.xpath("//div[contains(text(),'Greater than Or Equal')]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Greater Than or Equal')]")).click();
 
 		Thread.sleep(3000);
 
@@ -1399,7 +1480,7 @@ public class AudienceTest extends FunctionalTest {
 
 		driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input")).sendKeys("5");
 
-		// driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys(Keys.ENTER);
+		// 
 
 		driver.findElement(By.xpath("//a[@class='audience-create-add-btn ng-scope']")).click();
 		Thread.sleep(3000);
@@ -1432,6 +1513,8 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 28, enabled = false)
 	public void vaidateTC_AG_023() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AG_023");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(10000);
@@ -1451,7 +1534,7 @@ public class AudienceTest extends FunctionalTest {
 
 		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
 
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 
 		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
 
@@ -1488,6 +1571,8 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 29, enabled = false)
 	public void vaidateTC_AG_025() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AG_025");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(10000);
@@ -1507,7 +1592,7 @@ public class AudienceTest extends FunctionalTest {
 
 		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
 
-		driver.findElement(By.xpath("//span[contains(text(),'Select or search operator')]")).click();
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 
 		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
 
@@ -1537,6 +1622,8 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 30, enabled = false)
 	public void vaidateTC_AG_011() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AG_011");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(10000);
@@ -1613,6 +1700,8 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 32, enabled = false)
 	public void vaidateTC_AG_014() throws Exception {
 		extentTest = extent.startTest("vaidateTC_AG_014");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(10000);
@@ -1639,6 +1728,8 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 33, enabled = false)
 	public void vaidateTC_AG_016() throws Exception {
 		extentTest = extent.startTest("vaidateTC_AG_016");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(10000);
@@ -1664,6 +1755,8 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 34, enabled = false)
 	public void vaidateTC_AG_015() throws Exception {
 		extentTest = extent.startTest("vaidateTC_AG_015");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(10000);
@@ -1694,6 +1787,8 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 35, enabled = false)
 	public void vaidateTC_AG_033() throws Exception {
 		extentTest = extent.startTest("vaidateTC_AG_033");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(10000);

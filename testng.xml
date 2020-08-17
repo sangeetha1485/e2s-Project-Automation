@@ -8,7 +8,7 @@
   
   
     <classes>
-      <class name="Test.NotificationTest"/>
+      <class name="Test.AudienceTest"/>
       
     </classes>
   </test> <!-- Test -->

@@ -41,6 +41,9 @@ public class CampusNews extends FunctionalTest{
 		
 		public static final String searchbycategory="//input[@id='institution_structure_search'";
 		public static final String createnewsbutton="//button[@class='btn btn-primary btn-sm ng-binding ng-scope']";
+		public static final String searchcategory="//input[@id='ui_select_search_input_category']";
+				
+		public static final String selectcategoryddl="//span[contains(text(),'Miscellaneous')]";
 		
 		
 		//miscellaneous category locators

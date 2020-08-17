@@ -128,8 +128,8 @@ public class NotificationTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 3, enabled = false)
-	public void validateTC_N_007() throws InterruptedException, AWTException {
+	@Test(priority = 3, enabled = true)
+	public void validateTC_N_007() throws Exception {
 		extentTest = extent.startTest("validateTC_N_007");
 		Thread.sleep(5000);
 
@@ -139,7 +139,10 @@ public class NotificationTest extends FunctionalTest {
 
 		gm.click("Xpath", notificationpagelocators.createnewcategorybutton);
 
-		gm.SendKeys("Xpath", notificationpagelocators.entercategoryname, "Library Notifications");
+		ExcelUtils.setExcelFile(Constants.Path_TestData, Constants.File_TestData);
+		
+		
+		gm.SendKeys("Xpath", notificationpagelocators.entercategoryname, ExcelUtils.getCellData(1,8));
 
 		// gm.click("Xpath", notificationpagelocators.selectimagebutton);
 
@@ -149,7 +152,7 @@ public class NotificationTest extends FunctionalTest {
 		gm.click("Xpath", notificationpagelocators.savenewcategorybutton);
 
 		Thread.sleep(5000);
-		Assert.assertEquals(gm.getText("Xpath", notificationpagelocators.categoryddl), "Library Notifications");
+		Assert.assertTrue(gm.getText("Xpath", notificationpagelocators.categoryddl).equalsIgnoreCase(ExcelUtils.getCellData(1,8)));
 
 	}
 
@@ -422,7 +425,7 @@ public class NotificationTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 9, enabled = false)
+	@Test(priority = 9, enabled = true)
 	public void validateTC_N_029() throws InterruptedException, AWTException {
 
 		extentTest = extent.startTest("validateTC_N_029");
@@ -599,7 +602,7 @@ public class NotificationTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 11, enabled = false)
+	@Test(priority = 11, enabled = true)
 	public void validateTC_N_040() throws Exception {
 
 		extentTest = extent.startTest("validateTC_N_040");
@@ -654,33 +657,33 @@ public class NotificationTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 12, enabled = false)
-	public void validateTC_N_045() throws Exception {
-		extentTest = extent.startTest("validateTC_N_045");
-		Thread.sleep(5000);
-		gm.Wait("//*[@id='top_navigation_heading']");
-		gm.navigateToNotificationsHomePage();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//input[@id='institution_structure_search']")).sendKeys("Library Notifications");
-
-		driver.findElement(By.xpath("//input[@id='institution_structure_search']")).sendKeys(Keys.ENTER);
-
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath("//a[contains(text(),'Library Notifications')]")).click();
-		
-		
-		gm.click("Xpath", notificationpagelocators.clickfilterbutton);
-		
-		gm.click("Xpath", notificationpagelocators.clickstatusddl);
-		
-		gm.click("Xpath", notificationpagelocators.selectcompletedoption);
-		
-		
-		
-	}
+//	@Test(priority = 12, enabled = true)
+//	public void validateTC_N_045() throws Exception {
+//		extentTest = extent.startTest("validateTC_N_045");
+//		Thread.sleep(5000);
+//		gm.Wait("//*[@id='top_navigation_heading']");
+//		gm.navigateToNotificationsHomePage();
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath("//input[@id='institution_structure_search']")).sendKeys("Library Notifications");
+//
+//		driver.findElement(By.xpath("//input[@id='institution_structure_search']")).sendKeys(Keys.ENTER);
+//
+//		Thread.sleep(3000);
+//
+//		driver.findElement(By.xpath("//a[contains(text(),'Library Notifications')]")).click();
+//		
+//		
+//		gm.click("Xpath", notificationpagelocators.clickfilterbutton);
+//		
+//		gm.click("Xpath", notificationpagelocators.clickstatusddl);
+//		
+//		gm.click("Xpath", notificationpagelocators.selectcompletedoption);
+//		
+//		
+//		
+//	}
 	
-	@Test(priority = 13, enabled = true)
+	@Test(priority = 13, enabled = false)
 	public void validateTC_N_046() throws Exception {
 		
 		extentTest = extent.startTest("validateTC_N_046");
@@ -703,8 +706,9 @@ public class NotificationTest extends FunctionalTest {
 		
 		Thread.sleep(3000);
 		// nhp.clickCreateNotification();
+		ExcelUtils.setExcelFile(Constants.Path_TestData, Constants.File_TestData);
 
-		gm.SendKeys("Xpath", notificationpagelocators.enterTitle, "new announcement");
+		gm.SendKeys("Xpath", notificationpagelocators.enterTitle, ExcelUtils.getCellData(1, 9));
 
 		gm.SendKeys("Xpath", notificationpagelocators.enterLockScreenMsg, "test lock screen msg");
 
