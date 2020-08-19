@@ -2,6 +2,7 @@ package Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -22,6 +23,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -51,10 +53,12 @@ public class FunctionalTest {
 	
 	
 	@BeforeMethod
-	public void setUp() throws InterruptedException {
+	public void setUp(Method method) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\HP\\Documents\\selenium\\chromedriver_win32_old\\chromedriver.exe");
-
+		Test test = method.getAnnotation(Test.class);
+	    System.out.println("Test name is " +  method.getName());
+	    System.out.println("Test description is " + test.description());
 		driver = new ChromeDriver();
 
 		driver.get(Constants.URL);

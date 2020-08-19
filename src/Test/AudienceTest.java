@@ -37,7 +37,7 @@ public class AudienceTest extends FunctionalTest {
 	
 	
 	
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = false,description="Verify the Internal option is displayed under source when user select Staff from the dropdown of user type")
 	public void vaidateTC_AP_006() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_006");
@@ -70,7 +70,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, enabled = false,description="Verify user able to select Source by clicking the Radio button in Create new page")
 	public void vaidateTC_AP_007() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_007");
@@ -106,7 +106,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = false,description="Verify Error message is displayed when user add filter rule without selecting value in the \"Filters for selecting alumni List\" field")
 	public void vaidateTC_AP_010() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_010");
@@ -149,7 +149,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 4, enabled = false)
+	@Test(priority = 4, enabled = false,description="Verify user able to add Filter rule after selecting Attribute, Operator, Value")
 	public void vaidateTC_AP_011() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_011");
@@ -170,7 +170,7 @@ public class AudienceTest extends FunctionalTest {
 		driver.findElement(By.xpath("//span[contains(text(),'Select or search attribute')]")).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//div[contains(text(),'seat number')]")).click();
-		
+		Thread.sleep(5000);
 		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 		
 		driver.findElement(By.xpath("//div[contains(text(),'Equals')]")).click();
@@ -191,7 +191,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 5, enabled = false)
+	@Test(priority = 5, enabled = false,description="Verify Created rule is displayed when user click plus icon after selecting Attribute,Operator,Value in the Personas create page")
 	public void vaidateTC_AP_012() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_012");
@@ -253,7 +253,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 6, enabled = false)
+	@Test(priority = 6, enabled = false,description="Verify user allow to create more than one rule in the Filters for selecting Student List field of Personas create page")
 	public void vaidateTC_AP_013() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_013");
@@ -311,7 +311,7 @@ public class AudienceTest extends FunctionalTest {
 		driver.findElement(By.xpath("//span[contains(text(),'Select or search value')]")).click();
 		
 		
-		driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input")).sendKeys("Medical Biotechnology");
+		driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input")).sendKeys("Dentistry");
 		driver.findElement(By.xpath("//label[contains(text(),'Value*')]//following::input")).sendKeys(Keys.ENTER);
 		//
 		
@@ -344,7 +344,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 7, enabled = false)
+	@Test(priority = 7, enabled = false,description="Verify user able to edit rule by clicking the edit icon appears under Action column in the Rule set")
 	public void vaidateTC_AP_014() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_014");
@@ -394,8 +394,8 @@ public class AudienceTest extends FunctionalTest {
 		//clicking on edit
 		driver.findElement(By.xpath("//i[@class='fa fa-pencil']")).click();
 		Thread.sleep(3000);
-		
-	   driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[6]/div[2]/div[1]/div[2]/div/div/a/span[2]/span")).click();
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
+	  // driver.findElement(By.xpath("//i[@class='fa fa-check']")).click();
 		
 		driver.findElement(By.xpath("//div[contains(text(),'Not Equals')]")).click();
 		
@@ -403,7 +403,7 @@ public class AudienceTest extends FunctionalTest {
 		
 		
 	
-		
+		//i[@class='fa fa-pencil']
 		
 		
 		
@@ -419,12 +419,13 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 8, enabled = false,description="Verify the Manage user page is displayed when user click on the count of the Total audience count matching with above selection")
 	public void vaidateTC_AP_018() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_018");
 		Thread.sleep(5000);
 		gm.Wait("//*[@id='top_navigation_heading']");
+		Thread.sleep(5000);
 		gm.navigateToAudiencePage();
 		
 		Thread.sleep(10000);
@@ -468,10 +469,10 @@ public class AudienceTest extends FunctionalTest {
 		Thread.sleep(3000);
 		
 		//clicking total audience count link
-		driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[7]/div[1]/div/span/a")).click();
+		driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[6]/div[1]/div/span/a")).click();
 		
 	
-		
+		//*[@id="page-wrapper"]/div[2]/div[2]/form/div/div/div/div[6]/div[1]/div/span/a
 		Thread.sleep(3000);
 		
 		String assertmanageaudience=driver.findElement(By.xpath("//div[@class='col-sm-8 right-side-popup-heading ng-binding']")).getText();
@@ -484,7 +485,7 @@ public class AudienceTest extends FunctionalTest {
 		
 	}
 	
-	@Test(priority = 9, enabled = false)
+	@Test(priority = 9, enabled = false,description="Verify user able to list the Active and In active personas by selecting Active and In active option in the Status dropdown of the audience personas page")
 	public void vaidateTC_AP_027() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_027");
@@ -562,7 +563,7 @@ public class AudienceTest extends FunctionalTest {
 	}
 	
 	
-	@Test(priority = 10, enabled = false)
+	@Test(priority = 10, enabled = false,description="Verify user able to view users if user clicks on count displayed against Total audience count matching with above selection link in the personas page")
 	public void vaidateTC_AP_032() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_032");
@@ -611,9 +612,9 @@ public class AudienceTest extends FunctionalTest {
 		Thread.sleep(3000);
 		
 		//clicking total audience count link
-		driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[7]/div[1]/div/span/a")).click();
+		driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[6]/div[1]/div/span/a")).click();
 		
-	
+		
 		
 		Thread.sleep(3000);
 		
@@ -629,7 +630,7 @@ public class AudienceTest extends FunctionalTest {
 	
 	}
 	
-	@Test(priority = 11, enabled = false)
+	@Test(priority = 11, enabled = false,description="Verify user is able to add \"not equal \"option as a rule in persona page")
 	public void vaidateTC_AP_033() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_033");
@@ -686,7 +687,7 @@ public class AudienceTest extends FunctionalTest {
 	
 	}
 	
-	@Test(priority = 12, enabled = false)
+	@Test(priority = 12, enabled = false,description="Verify user is able to add greater than or equal option as a rule in persona page")
 	public void vaidateTC_AP_034() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_034");
@@ -743,7 +744,7 @@ public class AudienceTest extends FunctionalTest {
 	
 	}
 	
-	@Test(priority = 13, enabled = false)
+	@Test(priority = 13, enabled = false,description="Verify user is able to add Greater than option as a rule in persona page")
 	public void vaidateTC_AP_036() throws InterruptedException
 	{
 		extentTest = extent.startTest("vaidateTC_AP_036");
@@ -800,7 +801,7 @@ public class AudienceTest extends FunctionalTest {
 	
 	}
 	
-	@Test(priority = 14, enabled = false)
+	@Test(priority = 14, enabled = false,description="Verify user able to create new personas with staff")
 	public void validateTC_AP_029() throws InterruptedException {
 
 		extentTest = extent.startTest("validateTC_AP_029");
@@ -811,7 +812,7 @@ public class AudienceTest extends FunctionalTest {
 		gm.click("Xpath", audiencepagelocators.createnewbutton);
 		Thread.sleep(10000);
 
-		gm.SendKeys("Name", audiencepagelocators.personaname, "10");
+		gm.SendKeys("Name", audiencepagelocators.personaname, "test persona 14");
 
 		gm.SendKeys("Xpath", audiencepagelocators.enterDescription, "test");
 
@@ -822,7 +823,7 @@ public class AudienceTest extends FunctionalTest {
 		// write code for seat number
 
 		gm.click("Xpath", audiencepagelocators.selectSeatNumber);
-
+		Thread.sleep(3000);
 		gm.click("Xpath", audiencepagelocators.selectOperator);
 
 		// write code for operator
@@ -843,7 +844,7 @@ public class AudienceTest extends FunctionalTest {
 		gm.click("Xpath", audiencepagelocators.createpersonaButton);
 
 		Thread.sleep(5000);
-		Assert.assertTrue(driver.getPageSource().contains("testpersona4"), "persona created successfully");
+		Assert.assertTrue(driver.getPageSource().contains("test persona 14"), "persona created successfully");
 
 	}
 
@@ -913,7 +914,7 @@ public class AudienceTest extends FunctionalTest {
 
 		ExcelUtils.setExcelFile(Constants.Path_TestData, Constants.File_TestData);
 		Thread.sleep(3000);
-		gm.SendKeys("Xpath", audiencepagelocators.enterFieldName, ExcelUtils.getCellData(1, 12));
+		gm.SendKeys("Xpath", audiencepagelocators.enterFieldName, ExcelUtils.getCellData(1, 10));
 
 		gm.click("Xpath", audiencepagelocators.enterFieldType);
 
@@ -1065,7 +1066,7 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-//	@Test(priority = 20, enabled = true)
+//	@Test(priority = 20, enabled = false)
 //	public void validateTC_AI_066() throws Exception {
 //		extentTest = extent.startTest("validateTC_AI_066");
 //		Thread.sleep(5000);
@@ -1149,7 +1150,7 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 22, enabled = true)
+	@Test(priority = 22, enabled = true,description="testing test description")
 	public void vaidateTC_AI_089() throws Exception {
 		extentTest = extent.startTest("validateTC_AI_089");
 		Thread.sleep(5000);
@@ -1187,7 +1188,7 @@ public class AudienceTest extends FunctionalTest {
 		driver.findElement(By.xpath("//div[@class='audience-contact-box-detail-name ng-binding ng-scope']")).click();
 
 		// comparing excel input and added staff details
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		Assert.assertEquals(ExcelUtils.getCellData(1, 0), gm.getText("Xpath", audiencepagelocators.enterStaffID),
 				"entered staff id is displayed");
 
@@ -1257,7 +1258,7 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 24, enabled = false)
+	@Test(priority = 24, enabled = true)
 	public void vaidateTC_AI_020() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AI_020");
 		Thread.sleep(5000);
@@ -1394,7 +1395,7 @@ public class AudienceTest extends FunctionalTest {
 
 		driver.findElement(By.xpath("//span[contains(text(),'Select or search value')]")).click();
 
-		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys("Medical Biotechnology");
+		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys("Dentistry");
 
 		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys(Keys.ENTER);
 
@@ -1457,7 +1458,7 @@ public class AudienceTest extends FunctionalTest {
 
 		driver.findElement(By.xpath("//span[contains(text(),'Select or search value')]")).click();
 
-		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys("Medical Biotechnology");
+		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys("Dentistry");
 
 		driver.findElement(By.xpath("//input[@id='ui_select_search_input_value']")).sendKeys(Keys.ENTER);
 
@@ -1471,7 +1472,9 @@ public class AudienceTest extends FunctionalTest {
 
 		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 
-		driver.findElement(By.xpath("//div[contains(text(),'Greater Than or Equal')]")).click();
+		gm.click("Xpath", audiencepagelocators.selectGreaterThanOrEqual);
+		
+		//driver.findElement(By.xpath("//div[contains(text(),'Greater Than or Equal')]")).click();
 
 		Thread.sleep(3000);
 
@@ -1551,9 +1554,7 @@ public class AudienceTest extends FunctionalTest {
 		driver.findElement(By.xpath("//i[@class='fa fa-pencil']")).click();
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(
-				"//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[6]/div[2]/div[1]/div[2]/div/div/a/span[2]/span"))
-				.click();
+		gm.click("Xpath", audiencepagelocators.selectsearchoperator);
 
 		driver.findElement(By.xpath("//div[contains(text(),'Not Equals')]")).click();
 
@@ -1605,12 +1606,12 @@ public class AudienceTest extends FunctionalTest {
 
 		// clicking on apply
 		driver.findElement(By.xpath("//button[@class='ladda-button btn btn-primary btn-sm']")).click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		// clicking total audience count link
-		driver.findElement(By.xpath("//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[7]/div[1]/div/span/a"))
-				.click();
-
+		
+		gm.click("Xpath", audiencepagelocators.totalUsersUploadedCount);
+		
 		Thread.sleep(3000);
 
 		String assertmanageaudience = driver
@@ -1646,6 +1647,8 @@ public class AudienceTest extends FunctionalTest {
 	@Test(priority = 31, enabled = false)
 	public void vaidateTC_AG_013() throws Exception {
 		extentTest = extent.startTest("vaidateTC_AG_013");
+		Thread.sleep(5000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToAudiencePage();
 
 		Thread.sleep(10000);

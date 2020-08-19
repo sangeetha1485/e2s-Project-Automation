@@ -46,7 +46,7 @@ WebDriver driver;
 		public static final String enterDescription="//textarea[@name='description']";
 		public static final String selectAttribute="//span[contains(text(),'Select or search attribute')]";
 		
-		public static final String selectOperator="//span[contains(text(),'Select or search operator')]";
+		public static final String selectOperator="//span[@id='select_placeholder_opt']//following::span[@class='select2-chosen']";
 		public static final String selectValue="//label[contains(text(),'Value*')]//following::input";
 		
 		public static final String clickAddButton ="//a[@class='audience-create-add-btn ng-scope']";
@@ -54,9 +54,9 @@ WebDriver driver;
 		
 		public static final String createpersonaButton="//button[contains(text(),'Cancel')]//following::button";
 		public static final String selectSeatNumber="//div[contains(text(),'seat number')]";
-		public static final String selectsearchoperator="//*[@id='page-wrapper']/div[2]/div[2]/form/div/div/div/div[6]/div[2]/div[1]/div[2]/div/div/a/span[2]";
+		public static final String selectsearchoperator="//span[@id='select_placeholder_opt']//following::span";
 		
-		public static final String selectGreaterThanOrEqual="//div[contains(text(),'Greater than Or Equal')]";
+		public static final String selectGreaterThanOrEqual="//div[contains(text(),'Greater Than or Equal')]";
 		
 		public static final String selectUserType="//*[@id='selected_user_']";
 		public static final String clickStaffUserTypeOption="//*[@id='page-wrapper']/div[2]/div[2]/div[1]/div[2]/div/a";

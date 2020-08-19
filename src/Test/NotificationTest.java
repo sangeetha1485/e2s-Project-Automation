@@ -98,7 +98,8 @@ public class NotificationTest extends FunctionalTest {
 	public void validateTC_N_003() throws InterruptedException {
 		extentTest = extent.startTest("validateTC_N_003");
 		Thread.sleep(5000);
-
+		
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToNotificationsHomePage();
 
 		nhp.clickCreateNotification();
@@ -115,7 +116,7 @@ public class NotificationTest extends FunctionalTest {
 	public void validateTC_N_004() throws InterruptedException {
 		extentTest = extent.startTest("validateTC_N_004");
 		Thread.sleep(5000);
-
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToNotificationsHomePage();
 
 		nhp.clickCreateNotification();
@@ -132,7 +133,8 @@ public class NotificationTest extends FunctionalTest {
 	public void validateTC_N_007() throws Exception {
 		extentTest = extent.startTest("validateTC_N_007");
 		Thread.sleep(5000);
-
+		
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToNotificationsHomePage();
 
 		nhp.clickCreateNotification();
@@ -160,7 +162,9 @@ public class NotificationTest extends FunctionalTest {
 	public void validateTC_N_013() throws InterruptedException, AWTException {
 		extentTest = extent.startTest("validateTC_N_013");
 		Thread.sleep(5000);
-
+	
+		
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToNotificationsHomePage();
 
 		nhp.clickCreateNotification();
@@ -181,10 +185,10 @@ public class NotificationTest extends FunctionalTest {
 	@Test(priority = 5, enabled = true)
 	public void validateTC_N_015() throws InterruptedException, AWTException {
 		extentTest = extent.startTest("validateTC_N_015");
-		Thread.sleep(5000);
-
+		Thread.sleep(10000);
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToNotificationsHomePage();
-
+		Thread.sleep(5000);
 		nhp.clickCreateNotification();
 
 		gm.SendKeys("Xpath", notificationpagelocators.enterTitle, "notif002");
@@ -195,7 +199,7 @@ public class NotificationTest extends FunctionalTest {
 
 		gm.SendKeys("Xpath", notificationpagelocators.entercontent, "test content msg");
 		gm.click("Xpath", notificationpagelocators.clickNextButton);
-
+		Thread.sleep(5000);
 		gm.click("Xpath", notificationpagelocators.clicklaterradiobutton);
 		Thread.sleep(5000);
 
@@ -292,7 +296,7 @@ public class NotificationTest extends FunctionalTest {
 
 		extentTest = extent.startTest("validateTC_N_017");
 		Thread.sleep(5000);
-
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToNotificationsHomePage();
 
 		nhp.clickCreateNotification();
@@ -339,7 +343,7 @@ public class NotificationTest extends FunctionalTest {
 
 		extentTest = extent.startTest("validateTC_N_020");
 		Thread.sleep(5000);
-
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToNotificationsHomePage();
 
 		nhp.clickCreateNotification();
@@ -394,8 +398,9 @@ public class NotificationTest extends FunctionalTest {
 	public void validateTC_N_028() throws InterruptedException, AWTException {
 
 		extentTest = extent.startTest("validateTC_N_028");
+		
 		Thread.sleep(5000);
-
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToNotificationsHomePage();
 
 		nhp.clickCreateNotification();
@@ -430,7 +435,7 @@ public class NotificationTest extends FunctionalTest {
 
 		extentTest = extent.startTest("validateTC_N_029");
 		Thread.sleep(5000);
-
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToNotificationsHomePage();
 
 		nhp.clickCreateNotification();
@@ -526,7 +531,7 @@ public class NotificationTest extends FunctionalTest {
 
 		extentTest = extent.startTest("validateTC_N_033");
 		Thread.sleep(5000);
-
+		gm.Wait("//*[@id='top_navigation_heading']");
 		gm.navigateToNotificationsHomePage();
 
 		nhp.clickCreateNotification();

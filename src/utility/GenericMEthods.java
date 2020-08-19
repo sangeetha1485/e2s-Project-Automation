@@ -80,7 +80,26 @@ public class GenericMEthods extends FunctionalTest {
 		}
 
 	}
+	public void navigateToServiceDeskPage() throws InterruptedException {
 
+		WebElement options = driver.findElement(By.xpath("//div[@class='sidebar-collapse']"));
+//
+		Actions act = new Actions(driver);
+//	
+		act.moveToElement(options).perform();
+		Thread.sleep(10000);
+
+		driver.findElement(By.xpath("//span[contains(text(),'Service Desk')]")).click();
+
+		Thread.sleep(3000);
+
+		Boolean notoption = driver.findElement(By.xpath("//span[contains(text(),'Inbox')]")).isDisplayed();
+
+		if ((notoption)) {
+			driver.findElement(By.xpath("//span[contains(text(),'Inbox')]")).click();
+		}
+
+	}
 	public void navigateToAudiencePage() throws InterruptedException {
 		Thread.sleep(10000);
 

@@ -8,6 +8,8 @@
   
   
     <classes>
+      
+      
       <class name="Test.NotificationTest"/>
       
     </classes>
