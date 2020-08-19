@@ -8,8 +8,8 @@
     <classes>
       <class name="Test.AudienceTest">
         <methods>
-          <include name="vaidateTC_AG_016"/>
-          <include name="vaidateTC_AG_022"/>
+          <include name="validateTC_AI_087"/>
+          <include name="vaidateTC_AI_089"/>
           <include name="setExtent"/>
           <include name="setUp"/>
           <include name="tearDown"/>

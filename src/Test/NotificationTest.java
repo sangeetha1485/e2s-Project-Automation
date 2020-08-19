@@ -94,7 +94,7 @@ public class NotificationTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public void validateTC_N_003() throws InterruptedException {
 		extentTest = extent.startTest("validateTC_N_003");
 		Thread.sleep(5000);
@@ -111,7 +111,7 @@ public class NotificationTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, enabled = true)
 	public void validateTC_N_004() throws InterruptedException {
 		extentTest = extent.startTest("validateTC_N_004");
 		Thread.sleep(5000);
@@ -156,7 +156,7 @@ public class NotificationTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 4, enabled = false)
+	@Test(priority = 4, enabled = true)
 	public void validateTC_N_013() throws InterruptedException, AWTException {
 		extentTest = extent.startTest("validateTC_N_013");
 		Thread.sleep(5000);
@@ -178,7 +178,7 @@ public class NotificationTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 5, enabled = false)
+	@Test(priority = 5, enabled = true)
 	public void validateTC_N_015() throws InterruptedException, AWTException {
 		extentTest = extent.startTest("validateTC_N_015");
 		Thread.sleep(5000);
@@ -287,7 +287,7 @@ public class NotificationTest extends FunctionalTest {
 //		
 //	}
 
-	@Test(priority = 6, enabled = false)
+	@Test(priority = 6, enabled = true)
 	public void validateTC_N_017() throws InterruptedException, AWTException {
 
 		extentTest = extent.startTest("validateTC_N_017");
@@ -334,7 +334,7 @@ public class NotificationTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 7, enabled = false)
+	@Test(priority = 7, enabled = true)
 	public void validateTC_N_020() throws InterruptedException, AWTException {
 
 		extentTest = extent.startTest("validateTC_N_020");
@@ -390,7 +390,7 @@ public class NotificationTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 8, enabled = true)
 	public void validateTC_N_028() throws InterruptedException, AWTException {
 
 		extentTest = extent.startTest("validateTC_N_028");
@@ -521,7 +521,7 @@ public class NotificationTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 10, enabled = false)
+	@Test(priority = 10, enabled = true)
 	public void validateTC_N_033() throws Exception {
 
 		extentTest = extent.startTest("validateTC_N_033");
@@ -683,7 +683,7 @@ public class NotificationTest extends FunctionalTest {
 //		
 //	}
 	
-	@Test(priority = 13, enabled = false)
+	@Test(priority = 13, enabled = true)
 	public void validateTC_N_046() throws Exception {
 		
 		extentTest = extent.startTest("validateTC_N_046");

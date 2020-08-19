@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="utility.ExtentReportListener"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Test.AudienceTest">
+      <class name="Test.NotificationTest">
         <methods>
-          <include name="validateTC_AI_074"/>
+          <include name="validateTC_N_013"/>
+          <include name="validateTC_N_046"/>
+          <include name="validateTC_N_033"/>
+          <include name="validateTC_N_020"/>
+          <include name="validateTC_N_040"/>
+          <include name="validateTC_N_007"/>
+          <include name="validateTC_N_029"/>
           <include name="setExtent"/>
           <include name="setUp"/>
+          <include name="validateTC_N_017"/>
+          <include name="validateTC_N_028"/>
+          <include name="validateTC_N_003"/>
+          <include name="validateTC_N_004"/>
+          <include name="validateTC_N_015"/>
           <include name="tearDown"/>
           <include name="endReport"/>
         </methods>
-      </class> <!-- Test.AudienceTest -->
+      </class> <!-- Test.NotificationTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

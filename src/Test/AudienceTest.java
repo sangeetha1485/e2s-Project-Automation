@@ -995,7 +995,7 @@ public class AudienceTest extends FunctionalTest {
 		gm.click("Xpath", audiencepagelocators.createnewbutton);
 
 		gm.click("Xpath", audiencepagelocators.clickCancel);
-
+		Thread.sleep(5000);
 		Boolean individualspagedisplayed = driver.findElement(By.xpath(audiencepagelocators.clickIndividualsTab))
 				.isDisplayed();
 
@@ -1021,7 +1021,7 @@ public class AudienceTest extends FunctionalTest {
 		Thread.sleep(5000);
 
 		ExcelUtils.setExcelFile(Constants.Path_TestData, Constants.File_TestData);
-
+		Thread.sleep(5000);
 		gm.SendKeys("Xpath", audiencepagelocators.enterStaffID, ExcelUtils.getCellData(1, 0));
 
 		gm.SendKeys("Xpath", audiencepagelocators.enterFirstName, ExcelUtils.getCellData(1, 1));
@@ -1257,7 +1257,7 @@ public class AudienceTest extends FunctionalTest {
 
 	}
 
-	@Test(priority = 24, enabled = true)
+	@Test(priority = 24, enabled = false)
 	public void vaidateTC_AI_020() throws InterruptedException {
 		extentTest = extent.startTest("vaidateTC_AI_020");
 		Thread.sleep(5000);
