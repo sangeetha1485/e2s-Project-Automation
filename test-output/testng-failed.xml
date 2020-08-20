@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <listeners>
-    <listener class-name="utility.ExtentReportListener"/>
-  </listeners>
-  <test thread-count="5" name="Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test.NotificationTest">
+      <class name="Test.ServiceDeskTest">
         <methods>
-          <include name="validateTC_N_007"/>
           <include name="setExtent"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="validateTC_N_015"/>
+          <include name="vaidateTC_SD_029"/>
           <include name="endReport"/>
         </methods>
-      </class> <!-- Test.NotificationTest -->
+      </class> <!-- Test.ServiceDeskTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

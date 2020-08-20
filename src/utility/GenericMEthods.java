@@ -80,6 +80,7 @@ public class GenericMEthods extends FunctionalTest {
 		}
 
 	}
+
 	public void navigateToServiceDeskPage() throws InterruptedException {
 
 		WebElement options = driver.findElement(By.xpath("//div[@class='sidebar-collapse']"));
@@ -98,6 +99,29 @@ public class GenericMEthods extends FunctionalTest {
 		if ((notoption)) {
 			driver.findElement(By.xpath("//span[contains(text(),'Inbox')]")).click();
 		}
+
+	}
+	public void navigateToServiceDeskConfigPage() throws InterruptedException {
+
+		WebElement options = driver.findElement(By.xpath("//div[@class='sidebar-collapse']"));
+//
+		Actions act = new Actions(driver);
+//	
+		act.moveToElement(options).perform();
+		Thread.sleep(5000);
+
+		
+
+		WebElement element = driver.findElement(By.xpath("//li[@title='Configuration']/a/i"));
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+
+
+//		WebElement options1 = driver.findElement(By.xpath("//li[@title='Configuration']/a/i"));
+//		act.moveToElement(options1).perform();
+		
+			driver.findElement(By.xpath("//li[@title='Configuration']/a/i")).click();
+		
 
 	}
 	public void navigateToAudiencePage() throws InterruptedException {
@@ -164,7 +188,7 @@ public class GenericMEthods extends FunctionalTest {
 
 		for (int i = 0; i < tableLinks.size(); i++) {
 			if (tableLinks.get(i).getText().contains(attribute))
-				
+
 			{
 				System.out.println("added attribute is displayed in grid");
 				return true;
@@ -341,42 +365,40 @@ public class GenericMEthods extends FunctionalTest {
 
 		}
 	}
+
 	public int getRecordsCountInCSV(String downloadPath, String csvFileName) {
 		int lineNumberCount = 0;
 		try {
 			if (!csvFileName.isEmpty() || csvFileName != null) {
-				String filePath =	downloadPath + System.getProperty("file.separator") + csvFileName;
+				String filePath = downloadPath + System.getProperty("file.separator") + csvFileName;
 				System.out.println(filePath);
 				File file = new File(filePath);
 				if (file.exists()) {
-					System.out.println("File found :" +csvFileName);
+					System.out.println("File found :" + csvFileName);
 					FileReader fr = new FileReader(file);
 					LineNumberReader linenumberreader = new LineNumberReader(fr);
 					while (linenumberreader.readLine() != null) {
 						lineNumberCount++;
 					}
-					//To remove the header
-					lineNumberCount=lineNumberCount-1;
+					// To remove the header
+					lineNumberCount = lineNumberCount - 1;
 					System.out.println("Total number of lines found in csv : " + (lineNumberCount));
 					linenumberreader.close();
 				} else {
 					System.out.println("File does not exists");
 				}
 			}
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		return lineNumberCount;
 	}
-	
-	
-	public static void uploadFile(String locator,String filepath) throws AWTException, InterruptedException {
+
+	public static void uploadFile(String locator, String filepath) throws AWTException, InterruptedException {
 		WebElement upload_btn = driver.findElement(By.xpath(locator));
 
-		setClipboardData(
-				filepath);
+		setClipboardData(filepath);
 
 		Actions builder1 = new Actions(driver);
 

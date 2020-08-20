@@ -6,16 +6,15 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Test.NotificationTest">
+      <class name="Test.ServiceDeskTest">
         <methods>
-          <include name="validateTC_N_007"/>
           <include name="setExtent"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="validateTC_N_015"/>
+          <include name="vaidateTC_SD_029"/>
           <include name="endReport"/>
         </methods>
-      </class> <!-- Test.NotificationTest -->
+      </class> <!-- Test.ServiceDeskTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

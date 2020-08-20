@@ -3,15 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test.AudienceTest">
+      <class name="Test.ServiceDeskTest">
         <methods>
-          <include name="validateTC_AI_087"/>
           <include name="setExtent"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="vaidateTC_SD_029"/>
           <include name="endReport"/>
         </methods>
-      </class> <!-- Test.AudienceTest -->
+      </class> <!-- Test.ServiceDeskTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

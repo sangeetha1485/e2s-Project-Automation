@@ -10,7 +10,7 @@
     <classes>
       
       
-      <class name="Test.NotificationTest"/>
+      <class name="Test.ServiceDeskTest"/>
       
     </classes>
   </test> <!-- Test -->
