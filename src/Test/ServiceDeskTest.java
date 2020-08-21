@@ -134,16 +134,20 @@ public class ServiceDeskTest  extends FunctionalTest{
 		
 		driver.findElement(By.xpath("//div[contains(text(),'Demo Ticket Template')]")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(ServiceDesklocators.entersubjectvalue)).clear();
-		
-	
-		gm.click("Xpath", ServiceDesklocators.cliccreatandcontinue);
-		Thread.sleep(3000);
-		
-		Boolean alertdisplayed=gm.isDisplayed("Xpath", "//div[contains(text(),'Please enter subject')]");
-		Assert.assertTrue(alertdisplayed);
-		
-		driver.findElement(By.xpath(ServiceDesklocators.entersubjectvalue)).sendKeys("test");
+		/*
+		 * driver.findElement(By.xpath(ServiceDesklocators.entersubjectvalue)).clear();
+		 * 
+		 * 
+		 * gm.click("Xpath", ServiceDesklocators.cliccreatandcontinue);
+		 * Thread.sleep(3000);
+		 * 
+		 * Boolean alertdisplayed=gm.isDisplayed("Xpath",
+		 * "//div[contains(text(),'Please enter subject')]");
+		 * Assert.assertTrue(alertdisplayed);
+		 * 
+		 * driver.findElement(By.xpath(ServiceDesklocators.entersubjectvalue)).sendKeys(
+		 * "test");
+		 */
 		
 		driver.findElement(By.xpath(ServiceDesklocators.enterdesc)).clear();
 		//gm.click("Xpath", ServiceDesklocators.clickaddnotes);
@@ -154,7 +158,7 @@ public class ServiceDeskTest  extends FunctionalTest{
 		gm.click("Xpath", ServiceDesklocators.cliccreatandcontinue);
 		Thread.sleep(5000);
 		
-		alertdisplayed=gm.isDisplayed("Xpath", "//div[contains(text(),'Please enter description')]");
+		Boolean alertdisplayed=gm.isDisplayed("Xpath", "//div[contains(text(),'Please enter description')]");
 		Assert.assertTrue(alertdisplayed);
 	}
 }
